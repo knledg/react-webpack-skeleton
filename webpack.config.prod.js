@@ -22,7 +22,7 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
-    extensions: [ '', '.js', '.jsx' ],
+    extensions: [ '', '.js' ],
   },
   plugins: [
     new HtmlWebpackPlugin({

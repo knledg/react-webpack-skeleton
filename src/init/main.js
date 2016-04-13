@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 import { AppRouter } from 'src/init/router';
 
 import 'src/assets/styles/app.scss';
+import 'react-flex-proto/styles/flex.css';
 
 // Initializing touch events
 import injectTapEventPlugin from 'react-tap-event-plugin';

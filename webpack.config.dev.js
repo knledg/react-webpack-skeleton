@@ -12,17 +12,19 @@ const pkg = require('./package.json');
 module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack-hot-middleware/client',
+    'babel-polyfill',
+    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
     path.join(__dirname, 'src', 'init', 'main.js'),
   ],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name]-[hash].js',
     chunkFilename: '[id]-[hash].chunk.js',
-    publicPath: process.env.BASE_URL.slice(0, -1),
+    publicPath: process.env.BASE_URL, // needs to be root
   },
   resolve: {
     root: __dirname,
+    extensions: [ '', '.js' ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -43,22 +45,14 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin([
-      'react-transform', {
-        'transforms': [{
-          'transform': 'react-transform-hmr',
-          'imports': ['react'],
-          'locals': ['module'],
-        }, {
-          'transform': 'react-transform-catch-errors',
-          'imports': ['react', 'redbox-react'],
-        }],
-      },
-    ]),
   ],
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
+      {
+        test: /\.js$/,
+        exclude: [ /node_modules/, /__test__/ ],
+        loader: 'babel-loader',
+      },
       { test: /\.json$/, loader: 'json' },
       { test: /\.(png|gif|jpg)$/, loader: 'url?limit=8192' },
       { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url?limit=10000&minetype=application/font-woff2' },
