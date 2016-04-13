@@ -16,7 +16,7 @@ module.exports = function(config) {
     webpack: {
       resolve: {
         root: __dirname,
-        extensions: [ '', '.js', '.jsx' ],
+        extensions: [ '', '.js' ],
       },
       module: {
         loaders: [
