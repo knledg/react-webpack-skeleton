@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Nav } from 'src/layout/nav/app';
+import { Sidebar, PageTop } from 'src/layout/components';
 
 export const AppLayout = React.createClass({
   propTypes: {
@@ -8,36 +8,38 @@ export const AppLayout = React.createClass({
   },
 
   render() {
+    // main - menu-collapsed
     return (
       <div>
-        <nav className="navbar navbar-inverse">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-              <a className="navbar-brand" href="/">{ process.env.APP_NAME }</a>
+        <main className=''>
+          <Sidebar />
+          <PageTop />
+
+          <div className="al-main">
+            <div className="al-content">
+              <content-top></content-top>
+              <div ui-view></div>
             </div>
-            <div id="navbar" className="navbar-collapse collapse">
-              <ul className="nav navbar-nav navbar-right">
-                <li><a href="/">Link</a></li>
+          </div>
+
+          <footer className="al-footer clearfix">
+            <div className="al-footer-right">Created with <i className="ion-heart"></i></div>
+            <div className="al-footer-main clearfix">
+              <div className="al-copy">React Webpack Skeleton</div>
+              <ul className="al-share clearfix">
+                <li><i className="socicon socicon-facebook"></i></li>
+                <li><i className="socicon socicon-twitter"></i></li>
+                <li><i className="socicon socicon-google"></i></li>
+                <li><i className="socicon socicon-github"></i></li>
               </ul>
             </div>
-          </div>
-        </nav>
+          </footer>
 
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-sm-3 col-md-2 sidebar">
-              <Nav location={this.props.location} />
-            </div>
-            <div className="col-sm-9 col-md-10 main">
-              {this.props.children}
-            </div>
-          </div>
+          <back-top></back-top>
+        </main>
+
+        <div id="preloader" ng-show="!$pageFinishedLoading">
+          <div></div>
         </div>
       </div>
     );
