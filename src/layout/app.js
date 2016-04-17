@@ -17,8 +17,7 @@ export const AppLayout = React.createClass({
 
           <div className="al-main">
             <div className="al-content">
-              <content-top></content-top>
-              <div ui-view></div>
+              {this.props.children}
             </div>
           </div>
 
