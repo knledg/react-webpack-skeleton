@@ -93,13 +93,14 @@ a.al-sidebar-list-link {
 }
 
 @mixin layout-collapsed() {
-  .al-main {
+  /* @todo */
+  /*.al-main {
     margin-left: 50px;
   }
 
   .al-footer {
     padding-left: 83px
-  }
+  }*/
 }
 
 @mixin default-sublist() {
