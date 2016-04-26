@@ -20,4 +20,4 @@ lint:
 	$(ESLINT) --ext .js --ext .jsx .
 
 test:
-	NODE_ENV=test nf run npm run test
+	NODE_PATH=. NODE_ENV=test npm run test
