@@ -10,6 +10,6 @@ describe('Welcome', () => {
 
     const h1 = Utils.findRenderedDOMComponentWithTag(component, 'h1');
 
-    expect(h1.getDOMNode().textContent).toEqual('React Webpack Skeleton');
+    expect(h1.textContent).toEqual('React Webpack Skeleton');
   });
 });
