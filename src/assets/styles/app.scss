@@ -1,1 +1,6 @@
-@import 'blur/auth.scss';
+@import 'bootstrap/css/bootstrap.min.css';
+@import 'blur/app.scss';
+
+.capitalize {
+  text-transform: uppercase;
+}

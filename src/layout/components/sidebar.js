@@ -1,13 +1,37 @@
+import _ from 'lodash';
 import React from 'react';
+import { Link } from 'react-router';
 
 export class Sidebar extends React.Component {
 
-  state = {
-
+  static propTypes = {
+    location: React.PropTypes.shape({
+      pathname: React.PropTypes.string.isRequired,
+      query: React.PropTypes.object.isRequired,
+    }),
   }
 
-  componentWillMount() {
+  state = {
+    navItems: [
+      { pathname: '/', label: 'Home', icon: 'home' },
+      { pathname: '/about', label: 'About', icon: 'info' },
+    ],
+  }
 
+  isSelected(navItem) {
+    return this.props.location.pathname === navItem.pathname ? 'selected' : '';
+  }
+
+  renderLinks() {
+    return _.map(this.state.navItems, (navItem) => {
+      return (
+        <li className={`al-sidebar-list-item ${this.isSelected(navItem)}`} key={navItem.pathname}>
+          <Link className="al-sidebar-list-link" to={{ pathname: navItem.pathname, query: navItem.query }}>
+            <i className={`fa fa-${navItem.icon}`}></i><span>{navItem.label}</span>
+          </Link>
+        </li>
+      );
+    });
   }
 
   render() {
@@ -43,11 +67,7 @@ export class Sidebar extends React.Component {
       <aside className="al-sidebar" ng-swipe-right="menuExpand()" ng-swipe-left="menuCollapse()"
        ng-mouseleave="hoverElemTop=selectElemTop">
         <ul className="al-sidebar-list">
-          <li className="al-sidebar-list-item selected">
-            <a className="al-sidebar-list-link" href='/'>
-              <i className="fa fa-home"></i><span>Home</span>
-            </a>
-          </li>
+          {this.renderLinks()}
         </ul>
       </aside>
     );

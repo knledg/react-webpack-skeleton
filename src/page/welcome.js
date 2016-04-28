@@ -1,12 +1,12 @@
 import React from 'react';
+import { Page } from 'src/components';
 
 export const Welcome = React.createClass({
   render() {
     return (
-      <div>
-        <h1 className='page-header'>React Webpack Skeleton</h1>
+      <Page title='React Webpack Skeleton'>
         <div>Welcome!</div>
-      </div>
+      </Page>
     );
   },
 });

@@ -12,7 +12,7 @@ export const AppLayout = React.createClass({
     return (
       <div>
         <main className=''>
-          <Sidebar />
+          <Sidebar {...this.props} />
           <PageTop />
 
           <div className="al-main">
