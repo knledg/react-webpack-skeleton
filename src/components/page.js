@@ -14,8 +14,8 @@ export class Page extends React.Component {
     }
 
     return (
-      <Col>
-        <h1 className='al-title capitalize'>{this.props.title}</h1>
+      <Col padding={0}>
+        <h1 className='al-title'>{this.props.title}</h1>
       </Col>
     );
   }
