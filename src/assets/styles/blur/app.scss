@@ -7,6 +7,8 @@
 @import "theme/_layout";
 @import 'theme/buttons';
 @import 'app/form';
+@import 'app/table';
+
 @import 'app/typography';
 @import 'app/profile';
 @import 'theme/bootstrap-overrides/panel';
@@ -16,6 +18,7 @@
 @import "theme/components/pageTop";
 @import "theme/components/sidebar";
 @import "theme/components/msgCenter";
+@import 'theme/table';
 @import "app/profile";
 
 html, body {
