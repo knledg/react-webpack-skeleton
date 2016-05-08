@@ -28,8 +28,10 @@ export const Welcome = React.createClass({
             </Panel>
           </Col>
           <Col padding={5}>
-            <Panel>
-              This is a paragraph
+            <Panel className='color-widget' title='Red Paragraph'>
+              <div className='red-text'>
+                <p>This is a red paragraph</p>
+              </div>
             </Panel>
           </Col>
         </Row>
@@ -42,8 +44,10 @@ export const Welcome = React.createClass({
             </Panel>
           </Col>
           <Col padding={5}>
-            <Panel title='This is a title'>
-              This is a paragraph
+            <Panel title='Yellow paragraph' className='color-widget'>
+              <div className='yellow-text'>
+                <p>This is a paragraph</p>
+              </div>
             </Panel>
           </Col>
           <Col padding={5}>

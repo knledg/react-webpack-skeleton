@@ -137,12 +137,16 @@ h5 {
     margin: 14px 0;
   }
 
-  .yellow-text p {
-    color: $warning-bg;
+  .yellow-text {
+    p {
+      color: $warning-bg;
+    }
   }
 
-  .red-text p {
-    color: $danger-bg;
+  .red-text {
+    p {
+      color: $danger-bg;
+    }
   }
 
   .links {

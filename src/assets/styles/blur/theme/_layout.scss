@@ -61,7 +61,7 @@ a {
   width: 100%;
   position: absolute;
   display: block;
-  bottom: 0;
+  /*bottom: 0; commenting out, seems to cause issues*/
   font-size: 13px;
   color: #ffffff;
   transition: padding-left 0.5s ease;

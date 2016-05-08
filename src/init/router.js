@@ -6,6 +6,7 @@ import { AppLayout } from 'src/layout/app';
 import { Welcome } from 'src/page/welcome';
 import { About } from 'src/page/about';
 import { TableDemo } from 'src/page/table-demo';
+import { ButtonDemo } from 'src/page/button-demo';
 import { NotFound } from 'src/page/not-found';
 
 export const AppRouter = (
@@ -14,6 +15,7 @@ export const AppRouter = (
       <Route path='/' component={Welcome} />
       <Route path='/about' component={About} />
       <Route path='/table-demo' component={TableDemo} />
+      <Route path='/button-demo' component={ButtonDemo} />
       <Route path="*" component={NotFound}/>
     </Route>
   </Router>
