@@ -8,16 +8,18 @@ export class Button extends React.Component {
     title: React.PropTypes.string,
     size: React.PropTypes.string,
     disabled: React.PropTypes.bool,
+    isIconHidden: React.PropTypes.bool,
   }
 
   static defaultProps = {
     onClick: function noop() { },
     size: 'md',
     disabled: false,
+    isIconHidden: false,
   }
 
   renderIcon(icon) {
-    if (! icon) {
+    if (! icon || this.props.isIconHidden) {
       return null;
     }
 
@@ -72,7 +74,7 @@ export class Button extends React.Component {
 
     return (
       <div className='button-wrapper'>
-        <button className={`btn ${classes}`} disabled={this.props.disabled}>
+        <button className={`btn ${classes}`} disabled={this.props.disabled} onClick={this.props.onClick}>
           {this.renderIcon(icon)} {this.props.title || title}
         </button>
       </div>

@@ -52,6 +52,10 @@
   }
 }
 
+.modal-open {
+  display: block; /* added 5/8/2016 JW */
+}
+
 @media screen and (min-width: $resM) {
   .modal:before {
     display: inline-block;
