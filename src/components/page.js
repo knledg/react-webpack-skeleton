@@ -14,8 +14,8 @@ export class Page extends React.Component {
     }
 
     return (
-      <Col>
-        <h1 className='page-header'>{this.props.title}</h1>
+      <Col padding={0}>
+        <h1 className='al-title'>{this.props.title}</h1>
       </Col>
     );
   }
@@ -35,10 +35,12 @@ export class Page extends React.Component {
   render() {
     return (
       <div>
-        <Row>
-          {this.renderTitle()}
-          {this.renderActionBar()}
-        </Row>
+        <div className="content-top clearfix">
+          <Row>
+            {this.renderTitle()}
+            {this.renderActionBar()}
+          </Row>
+        </div>
         {this.props.children}
       </div>
     );

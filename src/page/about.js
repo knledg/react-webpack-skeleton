@@ -1,12 +1,15 @@
 import React from 'react';
 
+import { Page, Panel } from 'src/components';
+
 export const About = React.createClass({
   render() {
     return (
-      <div>
-        <h1 className='page-header'>About</h1>
-        <div>About</div>
-      </div>
+      <Page title='About'>
+        <Panel title='The Team'>
+          Lorem Ipsum
+        </Panel>
+      </Page>
     );
   },
 });

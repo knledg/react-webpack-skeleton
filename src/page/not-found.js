@@ -1,20 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router';
 
-import { Row, Col } from 'react-flex-proto';
+import { Page, Panel } from 'src/components';
 
 export const NotFound = React.createClass({
   render() {
     return (
-      <Row alignItems='center'>
-        <Col className='warning'>
-          <strong>404</strong>
-          <div>
-            <h3>Page Not Found!</h3>
-            <Link to='/'>Back To Home</Link>
-          </div>
-        </Col>
-      </Row>
+      <Page title='404 Not Found'>
+        <Panel title='Page Not Found'>
+          The page you were looking for wasn't found!
+        </Panel>
+      </Page>
     );
   },
 });

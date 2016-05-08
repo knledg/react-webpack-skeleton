@@ -12,14 +12,14 @@ const compiler = webpack(config);
 
 
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
+  noInfo: false,
   publicPath: config.output.publicPath,
 });
 
 app.use(devMiddleware);
 app.use(require('webpack-hot-middleware')(compiler));
 
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   const reqPath = req.url;
   // find the file that the browser is looking for
   const file = _.last(reqPath.split('/'));
