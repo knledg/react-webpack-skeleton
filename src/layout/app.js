@@ -36,10 +36,6 @@ export const AppLayout = React.createClass({
 
           <back-top></back-top>
         </main>
-
-        <div id="preloader" ng-show="!$pageFinishedLoading">
-          <div></div>
-        </div>
       </div>
     );
   },

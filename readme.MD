@@ -10,3 +10,7 @@
 - `cp dev.env .env`
 - `npm i -g foreman`
 - `make client`
+
+## Themes
+
+- Blur Theme (Copyright (c) 2016 Akvemus GSC)

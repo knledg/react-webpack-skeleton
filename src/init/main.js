@@ -29,6 +29,5 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     `;
   }
-
   init();
 });
