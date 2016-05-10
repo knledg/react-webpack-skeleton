@@ -398,7 +398,7 @@ label.custom-input-danger {
   @include placeholderStyle($disabled, 1);
 }
 
-.form-control-rounded {
+.form-group .input-group .form-control.form-control-rounded {
   border-radius: 16px;
 }
 
