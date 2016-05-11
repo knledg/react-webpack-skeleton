@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Sidebar, PageTop } from 'src/layout/components';
+import { Notifications } from 'src/components';
 
 export const AppLayout = React.createClass({
   propTypes: {
@@ -36,6 +37,7 @@ export const AppLayout = React.createClass({
 
           <back-top></back-top>
         </main>
+        <Notifications/>
       </div>
     );
   },

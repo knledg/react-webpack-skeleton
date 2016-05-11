@@ -18,6 +18,7 @@ export class Sidebar extends React.Component {
       { pathname: '/table-demo', label: 'Tables', icon: 'table' },
       { pathname: '/button-demo', label: 'Buttons', icon: '' },
       { pathname: '/modal-demo', label: 'Modals', icon: '' },
+      { pathname: '/notifications-demo', label: 'Notifications', icon: '' },
     ],
   }
 
