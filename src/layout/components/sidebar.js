@@ -18,6 +18,7 @@ export class Sidebar extends React.Component {
       { pathname: '/table-demo', label: 'Tables', icon: 'table' },
       { pathname: '/button-demo', label: 'Buttons', icon: '' },
       { pathname: '/modal-demo', label: 'Modals', icon: '' },
+      { pathname: '/tabs-demo', label: 'Tabs', icon: '' },
       { pathname: '/input-demo', label: 'Inputs', icon: '' },
       { pathname: '/notifications-demo', label: 'Notifications', icon: '' },
     ],
@@ -70,7 +71,7 @@ export class Sidebar extends React.Component {
     // ul - slimscroll="{height: '{{menuHeight}}px'}" slimscroll-watch="menuHeight"
     return (
       <aside className="al-sidebar" ng-swipe-right="menuExpand()" ng-swipe-left="menuCollapse()"
-       ng-mouseleave="hoverElemTop=selectElemTop">
+        ng-mouseleave="hoverElemTop=selectElemTop">
         <ul className="al-sidebar-list">
           {this.renderLinks()}
         </ul>
