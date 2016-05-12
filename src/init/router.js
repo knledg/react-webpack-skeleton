@@ -9,6 +9,7 @@ import { About } from 'src/page/about';
 import { TableDemo } from 'src/page/table-demo';
 import { ButtonDemo } from 'src/page/button-demo';
 import { ModalDemo } from 'src/page/modal-demo';
+import { InputDemo } from 'src/page/input-demo';
 import { NotificationsDemo } from 'src/page/notifications-demo';
 /* End Demos */
 
@@ -23,6 +24,7 @@ export const AppRouter = (
       <Route path='/table-demo' component={TableDemo} />
       <Route path='/button-demo' component={ButtonDemo} />
       <Route path='/modal-demo' component={ModalDemo} />
+      <Route path='/input-demo' component={InputDemo} />
       <Route path='/notifications-demo' component={NotificationsDemo} />
 
       <Route path="*" component={NotFound}/>
