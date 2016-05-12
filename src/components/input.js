@@ -27,7 +27,6 @@ export class Input extends React.Component {
     type: 'text',
     hasFeedbackIcon: true,
     hasFeedback: true,
-    onValidate: function noop() { },
     disabled: false,
   }
 
@@ -70,6 +69,10 @@ export class Input extends React.Component {
       return null;
     }
 
+    if (_.includes(['checkbox', 'radio'], this.props.type)) {
+      return null;
+    }
+
     return <label className='control-label' htmlFor={this.props.id}>{this.props.label}</label>;
   }
 
@@ -90,7 +93,18 @@ export class Input extends React.Component {
   }
 
   renderCheckbox() {
-
+    const validationResult = this.getValidationResult();
+    const className = validationResult ? `has-${validationResult}` : '';
+    return (
+      <div className={className}>
+        <div className="checkbox">
+          <label className="custom-checkbox">
+            <input type="checkbox" value={this.props.value} />
+            <span>{this.props.label}</span>
+          </label>
+        </div>
+      </div>
+    );
   }
 
   renderTextArea() {
@@ -122,16 +136,32 @@ export class Input extends React.Component {
     );
   }
 
+  renderInputNoWrapper() {
+    if (! (this.props.addonLeft || this.props.addonRight)) {
+      return this.renderInput();
+    }
+
+    return null;
+  }
+
   renderAddonRight() {
     if (! this.props.addonRight) {
       return null;
     }
 
-    return this.props.addonRight;
+    return (
+      <span className='input-group-addon input-group-addon-primary addon-right'>
+        {this.props.addonRight}
+      </span>
+    );
   }
 
   renderFeedbackIcon(status) {
-    if (! (status && this.props.hasFeedbackIcon)) {
+    if (! (status && this.props.hasFeedbackIcon) || this.props.addonRight) {
+      return null;
+    }
+
+    if (_.includes(['select', 'checkbox', 'textarea', 'switch', 'radio'], this.props.type)) {
       return null;
     }
 
@@ -147,14 +177,19 @@ export class Input extends React.Component {
     return <i className={`ion-${icon} form-control-feedback`} />;
   }
 
+  renderHelpBlock() {
+    if (! this.props.helpLabel) {
+      return null;
+    }
+
+    return (
+      <div className='help-block sub-little-text'>{this.props.helpLabel}</div>
+    );
+  }
+
   renderInputWrapper() {
-    if (! (this.props.addonLeft && this.props.addonRight)) {
-      return [
-        this.renderAddonLeft(),
-        this.renderInput(),
-        this.renderAddonRight(),
-        this.renderFeedbackIcon(status),
-      ];
+    if (! (this.props.addonLeft || this.props.addonRight)) {
+      return null;
     }
 
     return (
@@ -162,7 +197,6 @@ export class Input extends React.Component {
         {this.renderAddonLeft()}
         {this.renderInput()}
         {this.renderAddonRight()}
-        {this.renderFeedbackIcon(status)}
       </div>
     );
   }
@@ -173,6 +207,9 @@ export class Input extends React.Component {
       <div className={`form-group ${this.props.className} ${this.getFeedback()} ${this.getStatus(status)}`}>
         {this.renderTopLabel()}
         {this.renderInputWrapper()}
+        {this.renderInputNoWrapper()}
+        {this.renderFeedbackIcon(status)}
+        {this.renderHelpBlock()}
       </div>
     );
   }
