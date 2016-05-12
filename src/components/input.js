@@ -6,6 +6,7 @@ export class Input extends React.Component {
   static propTypes = {
     type: React.PropTypes.string,
     id: React.PropTypes.string,
+    name: React.PropTypes.string,
     className: React.PropTypes.string,
     placeholder: React.PropTypes.string,
     helpLabel: React.PropTypes.string,
@@ -88,10 +89,6 @@ export class Input extends React.Component {
     );
   }
 
-  renderSelect() {
-
-  }
-
   renderCheckbox() {
     const validationResult = this.getValidationResult();
     const className = validationResult ? `has-${validationResult}` : '';
@@ -99,7 +96,7 @@ export class Input extends React.Component {
       <div className={className}>
         <div className="checkbox">
           <label className="custom-checkbox">
-            <input type="checkbox" value={this.props.value} />
+            <input type="checkbox" disabled={this.props.disabled} value={this.props.value} />
             <span>{this.props.label}</span>
           </label>
         </div>
@@ -107,20 +104,21 @@ export class Input extends React.Component {
     );
   }
 
-  renderTextArea() {
-
-  }
-
-  renderSwitch() {
-
-  }
-
   renderRadio() {
-
+    return (
+      <label className="radio-inline custom-radio nowrap">
+        <input
+          disabled={this.props.disabled}
+          type="radio"
+          name={this.props.name}
+          value={this.props.value} />
+        <span>{this.props.label}</span>
+      </label>
+    );
   }
 
   renderInput() {
-    if (_.includes(['select', 'checkbox', 'textarea', 'switch', 'radio'], this.props.type)) {
+    if (_.includes(['checkbox', 'radio'], this.props.type)) {
       return this[`render${_.startCase(this.props.type)}`]();
     }
 
@@ -161,7 +159,7 @@ export class Input extends React.Component {
       return null;
     }
 
-    if (_.includes(['select', 'checkbox', 'textarea', 'switch', 'radio'], this.props.type)) {
+    if (_.includes(['checkbox', 'radio'], this.props.type)) {
       return null;
     }
 

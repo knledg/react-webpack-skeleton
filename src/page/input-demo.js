@@ -36,7 +36,7 @@ export class InputDemo extends React.Component {
                 value={this.state.success} />
 
               <Input
-                onChange={e => this.onTextChange('success')}
+                onChange={e => this.onTextChange('success', e)}
                 onValidate={() => true}
                 label='Success No Icon'
                 hasFeedbackIcon={false}
@@ -104,6 +104,45 @@ export class InputDemo extends React.Component {
                 type='checkbox'
                 onValidate={() => false}
                 label='Error'
+                onChange={() => {}} />
+
+              <Input
+                type='checkbox'
+                label='No validation'
+                onChange={() => {}} />
+
+              <Input
+                type='checkbox'
+                disabled={true}
+                label='Disabled'
+                onChange={() => {}} />
+            </Panel>
+          </Col>
+          <Col>
+            <Panel title='Radio Buttons'>
+              <Input
+                type='radio'
+                name='firstSet'
+                label='Option 1'
+                onChange={() => {}} />
+
+              <Input
+                type='radio'
+                name='firstSet'
+                label='Option 2'
+                onChange={() => {}} />
+
+              <Input
+                type='radio'
+                name='firstSet'
+                label='Option 3'
+                onChange={() => {}} />
+
+              <Input
+                type='radio'
+                name='firstSet'
+                disabled={true}
+                label='Option 4'
                 onChange={() => {}} />
             </Panel>
           </Col>
