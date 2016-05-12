@@ -118,6 +118,7 @@
 
 @mixin overridePanelBg($color, $borderColor, $dropdownColor) {
   .panel.panel-blur, .panel.panel-blur:hover {
+    background-size: 100% 100%;
     border-color: $borderColor;
     background-color: $color;
   }
