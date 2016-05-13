@@ -6,6 +6,7 @@ import { AppLayout } from 'src/layout/app';
 /* Demos */
 import { Welcome } from 'src/page/welcome';
 import { About } from 'src/page/about';
+import { ProgressBars } from 'src/page/progress-bars';
 import { TableDemo } from 'src/page/table-demo';
 import { ButtonDemo } from 'src/page/button-demo';
 import { ModalDemo } from 'src/page/modal-demo';
@@ -22,6 +23,7 @@ export const AppRouter = (
 
       <Route path='/' component={Welcome} />
       <Route path='/about' component={About} />
+      <Route path='/progress-bars' component={ProgressBars} />
       <Route path='/button-demo' component={ButtonDemo} />
       <Route path='/modal-demo' component={ModalDemo} />
       <Route path='/table-demo' component={TableDemo} />
