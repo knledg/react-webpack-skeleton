@@ -20,7 +20,7 @@ export const ProgressBars = React.createClass({
         </Panel>
         <Panel title='Animated'>
           <ProgressBar type='success' animated={true} percentage={25}/>
-          <ProgressBar type='waning' animated={true} percentage={50} />
+          <ProgressBar type='warning' animated={true} percentage={50} />
           <ProgressBar type='danger' animated={true} percentage={75}/>
           <ProgressBar type='primary' animated={true} percentage={100}/>
         </Panel>
