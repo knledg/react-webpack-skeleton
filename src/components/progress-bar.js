@@ -8,12 +8,13 @@ export class ProgressBar extends React.Component {
     striped: React.PropTypes.bool,
     animated: React.PropTypes.bool,
     label: React.PropTypes.string,
-    percentage: React.PropTypes.number,
+    percentage: React.PropTypes.number.isRequired,
   }
 
   static defaultProps = {
     striped: false,
     animated: false,
+    type: 'primary',
     label: '',
 
   }
