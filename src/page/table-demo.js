@@ -5,7 +5,7 @@ import { Page, Panel, Table, TableHead, TableBody, TableRow, Button } from 'src/
 export const TableDemo = React.createClass({
   render() {
     return (
-      <Page title='Table'>
+      <Page title='Table Types'>
         <Panel title='Table with Hover Effect'>
           <h5>When mousing over table rows will respond</h5>
           <Table>
@@ -20,13 +20,13 @@ export const TableDemo = React.createClass({
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/chrome.svg' /></td>
                 <td>2,014 <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/></td>
                 <td>543 <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/></td>
-                <td>11% <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/></td>
+                <td>11.9% <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/></td>
               </TableRow>
               <TableRow>
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/safari.svg' /></td>
-                <td>890 <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/> </td>
+                <td>1,008 <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/> </td>
                 <td>102 <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_down_small.png' /></td>
-                <td>4.2% <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_down_small.png' /></td>
+                <td>4.22% <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_down_small.png' /></td>
               </TableRow>
               <TableRow>
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/firefox.svg' /></td>
@@ -51,13 +51,13 @@ export const TableDemo = React.createClass({
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/chrome.svg' /></td>
                 <td>2,014 <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/></td>
                 <td>543 <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/></td>
-                <td>11% <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/></td>
+                <td>11.9% <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/></td>
               </TableRow>
               <TableRow>
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/safari.svg' /></td>
-                <td>890 <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/> </td>
+                <td>1,008 <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_up_small.png'/> </td>
                 <td>102 <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_down_small.png' /></td>
-                <td>4.2% <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_down_small.png' /></td>
+                <td>4.22% <img src='http://g.foolcdn.com/common/img/ico/arrows/arrow_down_small.png' /></td>
               </TableRow>
               <TableRow>
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/firefox.svg' /></td>
@@ -71,29 +71,29 @@ export const TableDemo = React.createClass({
         <Panel title='Table With Borders'>
           <Table tableHover={false} tableBordered={true}>
             <TableHead blackMutedBackground={true}>
-              <th>Browser</th>
-              <th>Visits</th>
-              <th>Purchases</th>
-              <th>%</th>
+              <th className='align-right'>Browser</th>
+              <th className='align-right'>Visits</th>
+              <th className='align-right'>Purchases</th>
+              <th className='align-right'>%</th>
             </TableHead>
             <TableBody>
               <TableRow>
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/chrome.svg' /></td>
-                <td>2,014 </td>
-                <td>543 </td>
-                <td>11% </td>
+                <td className='align-right'>2,014 </td>
+                <td className='align-right'>543 </td>
+                <td className='align-right'>11.9% </td>
               </TableRow>
               <TableRow>
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/safari.svg' /></td>
-                <td>890 </td>
-                <td>102 </td>
-                <td>4.2% </td>
+                <td className='align-right'>1,008 </td>
+                <td className='align-right'>102 </td>
+                <td className='align-right'>4.22% </td>
               </TableRow>
               <TableRow>
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/firefox.svg' /></td>
-                <td>1,322 </td>
-                <td>379 </td>
-                <td>13.5% </td>
+                <td className='align-right'>1,322 </td>
+                <td className='align-right'>379 </td>
+                <td className='align-right'>13.5% </td>
               </TableRow>
             </TableBody>
           </Table>
@@ -176,7 +176,7 @@ export const TableDemo = React.createClass({
               </TableRow>
               <TableRow>
                 <td>6</td>
-                <td>Mcgregor</td>
+                <td>McGregor</td>
                 <td>Crowley</td>
               </TableRow>
             </TableBody>
@@ -201,7 +201,7 @@ export const TableDemo = React.createClass({
                 <td>Lorey</td>
                 <td>mattlorey@email.com</td>
                 <td>555-555-5555</td>
-                <td>Deactivated</td>
+                <td className='text-danger'>Deactivated</td>
                 <td>33</td>
               </TableRow>
               <TableRow>
@@ -210,7 +210,7 @@ export const TableDemo = React.createClass({
                 <td>Fogarty</td>
                 <td>ashley@email.com</td>
                 <td>555-555-5555</td>
-                <td>Inactive</td>
+                <td className='text-warning'>Inactive</td>
                 <td>21</td>
               </TableRow>
               <TableRow>
@@ -219,7 +219,7 @@ export const TableDemo = React.createClass({
                 <td>Walsh</td>
                 <td>jason@email.com</td>
                 <td>555-555-5555</td>
-                <td>Active</td>
+                <td className='text-success'>Active</td>
                 <td>27</td>
               </TableRow>
               <TableRow>
@@ -228,7 +228,7 @@ export const TableDemo = React.createClass({
                 <td>Ludwigs</td>
                 <td>mattludwigs@email.com</td>
                 <td>555-555-5555</td>
-                <td>Active</td>
+                <td className='text-success'>Active</td>
                 <td>26</td>
               </TableRow>
             </TableBody>
