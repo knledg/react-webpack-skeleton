@@ -8,9 +8,9 @@ export class Panel extends React.Component {
     size: React.PropTypes.string,
   }
 
-  defaultProps = {
+  static defaultProps = {
     className: '',
-    size: 'md',
+    size: 'auto',
   }
 
   renderHeader() {
@@ -20,9 +20,9 @@ export class Panel extends React.Component {
 
     return (
       <div className='panel-heading clearfix'>
-        <div className='panel-title'>
+        <h3 className='panel-title'>
           {this.props.title}
-        </div>
+        </h3>
       </div>
     );
   }

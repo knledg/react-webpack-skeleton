@@ -115,13 +115,11 @@ h5 {
     font-weight: $font-bold;
   }
 
-  .small-text {
+  .small-text { // JW - don't use p for React
     padding: 5px 0 0 0;
-    p {
-      font-size: 9px;
-      font-weight: $font-light;
-      line-height: 10px;
-    }
+    font-size: 9px;
+    font-weight: $font-light;
+    line-height: 10px;
   }
 }
 
@@ -138,15 +136,11 @@ h5 {
   }
 
   .yellow-text {
-    p {
-      color: $warning-bg;
-    }
+    color: $warning-bg; // JW - don't use p for React
   }
 
   .red-text {
-    p {
-      color: $danger-bg;
-    }
+    color: $danger-bg; // JW - don't use p for React
   }
 
   .links {
