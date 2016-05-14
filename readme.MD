@@ -8,7 +8,7 @@
 - `git init && git remote add origin <sshUrl>`
 - `npm install`
 - `cp dev.env .env`
-- `npm i -g foreman`
+- `npm i -g foreman` (if you don't have it globally installed already)
 - `make client`
 
 ## Themes
