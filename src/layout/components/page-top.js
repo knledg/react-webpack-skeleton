@@ -1,7 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+// Lib
+import eventBus from 'src/lib/event-bus';
+
 export class PageTop extends React.Component {
+
+  static propTypes = {
+    user: React.PropTypes.object.isRequired,
+    location: React.PropTypes.shape({
+      pathname: React.PropTypes.string.isRequired,
+      query: React.PropTypes.object.isRequired,
+    }),
+  }
 
   state = {
     isMenuOpen: false,
@@ -14,6 +25,10 @@ export class PageTop extends React.Component {
 
   onToggleMenu() {
     this.setState({ isMenuOpen: ! this.state.isMenuOpen });
+  }
+
+  onLogout() {
+    eventBus.emit('logout');
   }
 
   renderLogo() {
@@ -45,13 +60,17 @@ export class PageTop extends React.Component {
       <div className="user-profile clearfix">
         <div className={`al-user-profile dropdown ${this.state.isMenuOpen ? 'open' : ''}`}>
           <a className="profile-toggle-link dropdown-toggle" onClick={this.onToggleMenu.bind(this)}>
-            <img src='http://placehold.it/25/25' />
+            <img src={this.props.user.picture} />
           </a>
           <ul className="top-dropdown-menu profile-dropdown dropdown-menu">
             <li><i className="dropdown-arr"></i></li>
-            <li><a href="#/profile"><i className="fa fa-user"></i>Profile</a></li>
-            <li><a href><i className="fa fa-cog"></i>Settings</a></li>
-            <li><a href className="signout"><i className="fa fa-power-off"></i>Sign out</a></li>
+            <li><a href="/profile"><i className="fa fa-user"></i>Profile</a></li>
+            <li><a href="#"><i className="fa fa-cog"></i>Settings</a></li>
+            <li>
+              <a href={this.props.location.pathname} className="signout" onClick={e => this.onLogout()}>
+                <i className="fa fa-power-off"></i>Sign out
+              </a>
+            </li>
           </ul>
         </div>
       </div>

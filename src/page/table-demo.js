@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Page, Panel, Table, TableHead, TableBody, TableRow, Button } from 'src/components';
 
-export const TableDemo = React.createClass({
+export class TableDemo extends React.Component {
   render() {
     return (
       <Page title='Table Types'>
@@ -141,8 +141,8 @@ export const TableDemo = React.createClass({
           </Table>
         </Panel>
         <Panel size='xs' title='Striped Table'>
+          <h5>Rows are striped</h5>
           <Table tableHover={false} tableStriped={true}>
-            <h5>Rows are striped</h5>
             <TableHead blackMutedBackground={false}>
               <th>#</th>
               <th>First Name</th>
@@ -183,8 +183,8 @@ export const TableDemo = React.createClass({
           </Table>
         </Panel>
         <Panel title='Responsive Table'>
+          <h5>Table responds to window size</h5>
           <Table tableResponsive={true}>
-            <h5>Table responds to window size</h5>
             <TableHead blackMutedBackground={false}>
               <th>#</th>
               <th>First Name</th>
@@ -236,5 +236,6 @@ export const TableDemo = React.createClass({
         </Panel>
       </Page>
     );
-  },
-});
+  }
+}
+

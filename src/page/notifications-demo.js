@@ -3,7 +3,7 @@ import React from 'react';
 import { Page, Panel, Button } from 'src/components';
 import {Row, Col} from 'react-flex-proto';
 
-import notifications from 'src/lib/notifications';
+import eventBus from 'src/lib/event-bus';
 
 export class NotificationsDemo extends React.Component {
 
@@ -14,10 +14,10 @@ export class NotificationsDemo extends React.Component {
         <Row>
           <Col>
             <Panel title='Message Notifications' size='md'>
-              <Button type='success' onClick={() => notifications.addNotification('success', 'You have been successful')} />
-              <Button type='warning' onClick={() => notifications.addNotification('warning', 'You have been warned')} />
-              <Button type='danger' onClick={() => notifications.addNotification('error', 'You have been errored')} />
-              <Button type='info' onClick={() => notifications.addNotification('info', 'You have been informed', {title: 'And titled'})} />
+              <Button type='success' onClick={() => eventBus.addNotification('success', 'You have been successful')} />
+              <Button type='warning' onClick={() => eventBus.addNotification('warning', 'You have been warned')} />
+              <Button type='danger' onClick={() => eventBus.addNotification('error', 'You have been errored')} />
+              <Button type='info' onClick={() => eventBus.addNotification('info', 'You have been informed', {title: 'And titled'})} />
             </Panel>
           </Col>
         </Row>
