@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-flex-proto';
 
-import { Page, Panel, Input } from 'src/components';
+import { Page, Panel, Input, Select } from 'src/components';
 
 export class InputDemo extends React.Component {
 
@@ -84,6 +84,15 @@ export class InputDemo extends React.Component {
                 placeholder='Enter Credit Card'
                 helpLabel='Do not enter spaces.'
                 onChange={() => {}} />
+            </Panel>
+          </Col>
+          <Col>
+            <Panel title='Select Dropdowns'>
+              <Select
+                placeholder='Placeholder'
+                options={[ { value: 1, label: 'One' } ]} />
+
+
             </Panel>
           </Col>
           <Col>

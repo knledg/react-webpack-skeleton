@@ -30,7 +30,7 @@ export const Welcome = React.createClass({
           <Col padding={5}>
             <Panel className='color-widget' title='Red Paragraph'>
               <div className='red-text'>
-                <p>This is a red paragraph</p>
+                This is a red paragraph
               </div>
             </Panel>
           </Col>
@@ -46,7 +46,7 @@ export const Welcome = React.createClass({
           <Col padding={5}>
             <Panel title='Yellow paragraph' className='color-widget'>
               <div className='yellow-text'>
-                <p>This is a paragraph</p>
+                This is a paragraph
               </div>
             </Panel>
           </Col>
