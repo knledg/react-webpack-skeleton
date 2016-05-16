@@ -38,6 +38,9 @@ module.exports = {
       'process.env': {
         APP_NAME: JSON.stringify(APP_NAME),
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        AUTH0_DOMAIN: JSON.stringify(process.env.AUTH0_DOMAIN),
+        AUTH0_PUB_KEY: JSON.stringify(process.env.AUTH0_PUB_KEY),
+        BASE_URL: JSON.stringify(process.env.BASE_URL),
       },
     }),
     new ExtractTextPlugin('[name]-[hash].css', {

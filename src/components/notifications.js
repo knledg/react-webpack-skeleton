@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Notification} from 'src/components';
 
-import notifications from 'src/lib/notifications';
+import eventBus from 'src/lib/event-bus';
 
 export class Notifications extends React.Component {
 
@@ -31,7 +31,7 @@ export class Notifications extends React.Component {
 
     this.addNotification = this.addNotification.bind(this);
     this.onClose = this.onClose.bind(this);
-    notifications.on('notification', this.addNotification);
+    eventBus.on('notification', this.addNotification);
   }
 
   onClose(counter) {
