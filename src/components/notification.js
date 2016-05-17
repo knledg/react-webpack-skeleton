@@ -4,7 +4,7 @@ export class Notification extends React.Component {
 
   static propTypes = {
     title: React.PropTypes.string,
-    type: React.PropTypes.oneOf(['success', 'warning', 'danger', 'info']),
+    type: React.PropTypes.oneOf(['success', 'warning', 'error', 'info']),
     timeout: React.PropTypes.number,
     extendedTimeout: React.PropTypes.number,
     closeButton: React.PropTypes.bool,

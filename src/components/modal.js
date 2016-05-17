@@ -102,7 +102,9 @@ export class Modal extends React.Component {
   renderBody() {
     return (
       <div className={`modal-body ${this.getBodyAlignment()}`}>
-        {this.props.children}
+        <div>
+          {this.props.children}
+        </div>
       </div>
     );
   }

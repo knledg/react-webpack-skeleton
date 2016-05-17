@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React from 'react';
 
 import {Notification} from 'src/components';
@@ -26,7 +27,6 @@ export class Notifications extends React.Component {
     this.state = {
       counter: 0,
       notifications: {},
-      notificationsOrder: [],
     };
 
     this.addNotification = this.addNotification.bind(this);
@@ -34,51 +34,41 @@ export class Notifications extends React.Component {
     eventBus.on('notification', this.addNotification);
   }
 
-  onClose(counter) {
-    let notes = this.state.notifications;
-    let notesOrder = this.state.notificationsOrder;
-
-    notesOrder.splice(notesOrder.indexOf(counter), 1);
-    delete notes[counter];
-    this.setState({notifications: notes, notificationsOrder: notesOrder});
+  onClose(notification) {
+    const notifications = _.reject(this.state.notifications, { id: notification.id });
+    this.setState({notifications});
   }
 
   addNotification(notification) {
-    let notes = this.state.notifications;
-    let notesOrder = this.state.notificationsOrder;
+    let notifications = _.assign({}, this.state.notifications);
     if (!this.props.preventDuplicates || !_.some(this.state.notifications, (note) => {
       return notification.text === note.text;
     })) {
       let counter = this.state.counter;
-      notes[counter] = notification;
-      if (this.state.notificationsOrder.length === this.props.maxOpened) {
-        let remove = notesOrder.pop();
-        delete notes[remove];
+      notifications[counter] = _.assign({}, notification, { id: this.state.counter });
+
+      const ids = _.map(notifications, 'id');
+      if (ids.length >= this.props.maxOpened) {
+        const oldestId = _.head(ids);
+        notifications = _.reject(notifications, { id: oldestId });
       }
 
-      notesOrder.unshift(counter);
-      this.setState({notifications: notes, notificationsOrder: notesOrder, counter: ++counter});
+      this.setState({notifications, counter: ++counter});
     }
   }
 
   renderNotifications() {
-    let order = _.clone(this.state.notificationsOrder);
-    if (!this.props.newestOnTop) {
-      _.reverse(order);
-    }
-    return _.map(order, (counter) => {
-      const notification = this.state.notifications[counter];
+    let notifications = _.assign({}, this.state.notifications);
+    notifications = _.orderBy(notifications, 'id', this.props.newestOnTop ? 'desc' : 'asc');
+
+    return _.map(notifications, (notification) => {
       return (
-        <Notification {...notification.props} key={counter} onClose={() => this.onClose(counter)} blah='blah'>{notification.text}</Notification>
+        <Notification {...notification.props} key={notification.id} onClose={() => this.onClose(notification)}>{notification.text}</Notification>
       );
     });
   }
 
   render() {
-    if (!this.state.notificationsOrder.length) {
-      return null;
-    }
-
     return (
       <div id='toast-container' className={`toast-${this.props.position}`}>
         {this.renderNotifications()}

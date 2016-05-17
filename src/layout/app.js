@@ -111,7 +111,7 @@ class AppLayout extends React.Component {
 
           <back-top></back-top>
         </main>
-        <Notifications/>
+        <Notifications />
       </div>
     );
   }
