@@ -3,23 +3,21 @@ import _ from 'lodash';
 
 import { Page, Panel, ProgressBar } from 'src/components';
 
-export const ProgressBars = React.createClass({
+export class ProgressBars extends React.Component {
 
-  getInitialState() {
-    return {
-      percentage: _.fill(Array(16), 0),
-    };
-  },
+  state = {
+    percentage: _.fill(Array(16), 0),
+  }
 
   componentDidMount() {
     this.updatePercentages();
-  },
+  }
 
   componentWillUnmount() {
     if (this.timer) {
       clearTimeout(this.timer);
     }
-  },
+  }
 
   updatePercentages() {
     let done = true;
@@ -35,9 +33,9 @@ export const ProgressBars = React.createClass({
 
     this.setState({percentage});
     if (! done ) {
-      this.timer = setTimeout(this.updatePercentages, Math.random(500) + 250);
+      this.timer = setTimeout(() => this.updatePercentages(), Math.random(500) + 250);
     }
-  },
+  }
 
   render() {
     return (
@@ -68,5 +66,6 @@ export const ProgressBars = React.createClass({
         </Panel>
       </Page>
     );
-  },
-});
+  }
+}
+

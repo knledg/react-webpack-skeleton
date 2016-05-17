@@ -4,7 +4,7 @@ import { Page, Panel, Button } from 'src/components';
 
 import {Row, Col} from 'react-flex-proto';
 
-export const ButtonDemo = React.createClass({
+export class ButtonDemo extends React.Component {
   render() {
     return (
       <Page title='Buttons'>
@@ -72,5 +72,6 @@ export const ButtonDemo = React.createClass({
         </Row>
       </Page>
     );
-  },
-});
+  }
+}
+

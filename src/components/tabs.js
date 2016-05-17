@@ -21,7 +21,7 @@ export class Tabs extends React.Component {
     super(props);
 
     this.state = {
-      activeTab: 1,
+      activeTab: this.props.startTab || 1,
       tabs: [],
       clicked: false,
     };
@@ -63,7 +63,7 @@ export class Tabs extends React.Component {
     return map(tabs, (tab, index) => {
       const isActive = activeTab === index + 1 ? 'active' : '';
       return (
-        <li className={isActive} onClick={this.onSetActiveTab.bind(this, index + 1)}>
+        <li className={isActive} onClick={this.onSetActiveTab.bind(this, index + 1)} key={index}>
           {tab}
         </li>
       );

@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 export const Tab = ({ title, onClick }) => {
   return (
-    <a href onClick={onClick}>{title}</a>
+    <a href='#' onClick={onClick}>{title}</a>
   );
 };
 

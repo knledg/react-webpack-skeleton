@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Page, Panel } from 'src/components';
 
-export const NotFound = React.createClass({
+export class NotFound extends React.Component {
   render() {
     return (
       <Page title='404 Not Found'>
@@ -11,5 +11,6 @@ export const NotFound = React.createClass({
         </Panel>
       </Page>
     );
-  },
-});
+  }
+}
+

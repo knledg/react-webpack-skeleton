@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Page, Panel } from 'src/components';
 
-export const About = React.createClass({
+export class About extends React.Component {
   render() {
     return (
       <Page title='About'>
@@ -11,5 +11,5 @@ export const About = React.createClass({
         </Panel>
       </Page>
     );
-  },
-});
+  }
+}
