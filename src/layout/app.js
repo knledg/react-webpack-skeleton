@@ -55,7 +55,7 @@ class AppLayout extends React.Component {
     }
 
     return this.lock.getProfile(this.state.idToken, (err, user) => {
-      return err ? this.redirectToLogin() : this.setState({user});
+      return err ? this.onLogout() : this.setState({user});
     });
   }
 
@@ -68,7 +68,7 @@ class AppLayout extends React.Component {
         localStorage.setItem('userToken', authHash.id_token);
       }
       if (authHash.error) {
-        return this.redirectToLogin();
+        return this.onLogout();
       }
     }
     return idToken;
