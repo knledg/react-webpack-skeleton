@@ -5,11 +5,7 @@ import { Page, Panel, Input, Select } from 'src/components';
 
 export class InputDemo extends React.Component {
 
-  state = {
-    success: '',
-    fail: '',
-    warning: '',
-  }
+  state = {}
 
   onCloseModal(modalName) {
     this.setState({ [modalName]: false });
@@ -36,17 +32,17 @@ export class InputDemo extends React.Component {
                 value={this.state.success} />
 
               <Input
-                onChange={e => this.onTextChange('success', e)}
+                onChange={e => this.onTextChange('success2', e)}
                 onValidate={() => true}
                 label='Success No Icon'
                 hasFeedbackIcon={false}
-                value={this.state.success} />
+                value={this.state.success2} />
 
               <Input
                 onChange={e => this.onTextChange('fail', e)}
                 onValidate={() => false}
                 label='Error'
-                value={this.state.error} />
+                value={this.state.fail} />
 
               <Input
                 onChange={e => this.onTextChange('warning', e)}
@@ -59,14 +55,14 @@ export class InputDemo extends React.Component {
                 label='Addon Left'
                 addonLeft={<i className='fa fa-check' />}
                 value={this.state.addonLeft}
-                onChange={() => {}} />
+                onChange={e => this.onTextChange('addonLeft', e)} />
 
               <Input
                 onValidate={() => true}
                 label='Addon Right'
                 addonRight={<i className='fa fa-check' />}
-                value={this.state.addonLeft}
-                onChange={() => {}} />
+                value={this.state.addonRight}
+                onChange={e => this.onTextChange('addonRight', e)} />
 
               <Input
                 label='Disabled'
@@ -77,22 +73,27 @@ export class InputDemo extends React.Component {
               <Input
                 label='Placeholder'
                 placeholder='Enter Address'
-                onChange={() => {}} />
+                onChange={e => this.onTextChange('address', e)}
+                value={this.state.address} />
 
               <Input
                 label='With Help Block'
                 placeholder='Enter Credit Card'
                 helpLabel='Do not enter spaces.'
-                onChange={() => {}} />
+                onChange={e => this.onTextChange('creditCard', e)}
+                value={this.state.creditCard} />
             </Panel>
           </Col>
           <Col>
             <Panel title='Select Dropdowns'>
               <Select
-                placeholder='Placeholder'
+                placeholder='Standard Select'
                 options={[ { value: 1, label: 'One' } ]} />
 
-
+              <Select
+                placeholder='With Search'
+                isSearchable={true}
+                options={[ { value: 1, label: 'One' }, { value: 2, label: 'Two' } ]} />
             </Panel>
           </Col>
           <Col>

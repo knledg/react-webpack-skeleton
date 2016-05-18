@@ -6,11 +6,13 @@ export class Panel extends React.Component {
     title: React.PropTypes.string,
     className: React.PropTypes.string,
     size: React.PropTypes.string,
+    withScroll: React.PropTypes.bool,
   }
 
   static defaultProps = {
     className: '',
     size: 'auto',
+    withScroll: false,
   }
 
   renderHeader() {
@@ -54,7 +56,7 @@ export class Panel extends React.Component {
 
   render() {
     return (
-      <div className={`panel panel-blur ${this.renderPanelSize()} light-text with-scroll ${this.props.className}`}>
+      <div className={`panel panel-blur ${this.renderPanelSize()} light-text ${this.props.withScroll ? 'with-scroll' : ''} ${this.props.className}`}>
         {this.renderHeader()}
         <div className='panel-body'>
           {this.props.children}
