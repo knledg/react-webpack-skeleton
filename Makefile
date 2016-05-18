@@ -5,7 +5,8 @@ ESLINT = node_modules/.bin/eslint
 
 build:
 	make clean
-	BUILD_STATIC=true $(WEBPACK) \
+	$(WEBPACK) \
+		--config webpack.config.prod.js \
 		--verbose \
 		--display-chunks \
 		--bail

@@ -3,22 +3,13 @@ import { Page, Panel } from 'src/components';
 import { Row, Col } from 'react-flex-proto';
 
 export class Welcome extends React.Component {
+
   render() {
     return (
-      <Page title='React Webpack Skeleton'>
-        <h2>Panels</h2>
+      <Page title={process.env.APP_NAME}>
         <Row>
           <Col padding={5}>
             <Panel>
-              This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.
-              This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.
-              This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.
-              This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.
-              This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.
-              This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.
-              This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.
-              This is a paragraph. This is a paragraph.This is a paragraph. This is a paragraph.
-              This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.
               This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph.
             </Panel>
           </Col>

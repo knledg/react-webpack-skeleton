@@ -16,7 +16,7 @@ export class PageTop extends React.Component {
 
   state = {
     isMenuOpen: false,
-    appName: 'React Webpack Skeleton',
+    appName: process.env.APP_NAME,
   }
 
   componentWillMount() {

@@ -37,7 +37,7 @@ module.exports = {
       APP_VERSION: JSON.stringify(pkg.version),
       'process.env': {
         APP_NAME: JSON.stringify(APP_NAME),
-        'NODE_ENV': JSON.stringify('production'),
+        NODE_ENV: JSON.stringify('production'),
         AUTH0_DOMAIN: JSON.stringify(process.env.AUTH0_DOMAIN),
         AUTH0_PUB_KEY: JSON.stringify(process.env.AUTH0_PUB_KEY),
         BASE_URL: JSON.stringify(process.env.BASE_URL),
