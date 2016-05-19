@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Page, Panel, Table, TableHead, TableBody, TableRow, Button, EditableField } from 'src/components';
+import { Page, Panel, Table, TableHead, TableBody, TableRow, Button, EditableField, Pagination } from 'src/components';
+import {Row, Col} from 'react-flex-proto';
 
 export class TableDemo extends React.Component {
 
@@ -8,11 +9,16 @@ export class TableDemo extends React.Component {
     super(props);
     this.state = {
       chromeVisits: 1000,
+      currentPage: 1,
     };
   }
 
   onEditableChange(key, value) {
     this.setState({[key]: value});
+  }
+
+  onSetCurrentPage(value) {
+    this.setState({currentPage: value});
   }
 
   render() {
@@ -48,6 +54,11 @@ export class TableDemo extends React.Component {
               </TableRow>
             </TableBody>
           </Table>
+          <Row>
+            <Col align='center'>
+              <Pagination currentPage={Number(this.state.currentPage)} totalPages={5} onChange={value => this.onSetCurrentPage(value)} />
+            </Col>
+          </Row>
         </Panel>
         <Panel title='Table Without Hover Effect'>
           <h5>When mousing over table rows will not respond</h5>

@@ -159,11 +159,16 @@ input.search-input {
   padding-left: 8px;
 }
 
-.table .pagination {
+.pagination {
   margin: 4px 0 -12px 0;
   a {
     cursor: pointer;
   }
+}
+
+.pagination-input input {
+  height: 20px;
+  width: 75px;
 }
 
 .vertical-scroll {
