@@ -20,7 +20,6 @@ export class InputDemo extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <Page title='Inputs'>
         <Row>
@@ -162,7 +161,6 @@ export class InputDemo extends React.Component {
               <Textarea
                 name='textarea'
                 placeholder='Default Input'
-                disabled={false}
                 label='Text Area Label'
                 onChange={e => this.onTextChange('textarea', e)}
                 value={this.state.textarea} />

@@ -1,18 +1,14 @@
-import _ from 'lodash';
 import React from 'react';
 
 export class Textarea extends React.Component {
 
   static propTypes = {
-    type: React.PropTypes.string,
-    id: React.PropTypes.string,
     name: React.PropTypes.string,
     className: React.PropTypes.string,
     placeholder: React.PropTypes.string,
     label: React.PropTypes.string,
     onChange: React.PropTypes.func.isRequired,
     disabled: React.PropTypes.bool,
-    isRounded: React.PropTypes.bool,
     value: React.PropTypes.node.isRequired,
   }
 
@@ -23,25 +19,32 @@ export class Textarea extends React.Component {
     disabled: false,
   }
 
+  renderLabel() {
+    if (!this.props.label) {
+      return null;
+    }
+    return (
+      <label>{this.props.label}</label>
+    );
+  }
+
   renderTextarea() {
     return (
-      <div>
-        <label className="">{this.props.label}</label>
-        <textarea
-          className="form-control"
-          disabled={this.props.disabled}
-          name={this.props.name}
-          value={this.props.value}
-          placeholder={this.props.placeholder}
-          onChange={this.props.onChange}
-          ></textarea>
-      </div>
+      <textarea
+        className="form-control"
+        name={this.props.name}
+        value={this.props.value}
+        placeholder={this.props.placeholder}
+        onChange={this.props.onChange}
+        disabled={this.props.disabled}
+        ></textarea>
     );
   }
 
   render() {
     return (
       <div className={`form-group ${this.props.className}`}>
+        {this.renderLabel()}
         {this.renderTextarea()}
       </div>
     );
