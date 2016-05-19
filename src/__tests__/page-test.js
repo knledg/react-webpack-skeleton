@@ -2,14 +2,12 @@ import React from 'react';
 import expect from 'expect';
 import Utils from 'react-addons-test-utils';
 
-import { Welcome } from 'src/page/welcome';
+import { Page } from 'src/components';
 
-describe('Welcome', () => {
+describe('Page', () => {
   it('renders an h1', () => {
-    const component = Utils.renderIntoDocument(<Welcome />);
-
+    const component = Utils.renderIntoDocument(<Page title='React Webpack Skeleton' />);
     const h1 = Utils.findRenderedDOMComponentWithTag(component, 'h1');
-
     expect(h1.textContent).toEqual('React Webpack Skeleton');
   });
 });

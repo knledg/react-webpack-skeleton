@@ -18,8 +18,8 @@
     "type": "git",
     "url": "git+ssh://git@github.com/knledg/react-webpack-skeleton.git"
   },
-  "author": "Jason Walsh",
-  "license": "ISC",
+  "author": "Consolidated Knowledge",
+  "license": "MIT",
   "homepage": "https://github.com/knledg/react-webpack-skeleton#readme",
   "dependencies": {
     "axios": "^0.9.1",
