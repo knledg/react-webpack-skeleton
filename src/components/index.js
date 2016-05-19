@@ -1,5 +1,6 @@
 export * from './button';
 export * from './input';
+export * from './editable-field';
 export * from './loading';
 export * from './modal';
 export * from './notification';
