@@ -139,29 +139,29 @@ export class TableDemo extends React.Component {
             <TableBody>
               <TableRow>
                 <td>1</td>
-                <td>Ashley Fogarty</td>
+                <td>Ashley</td>
                 <td>ashley@email.com</td>
                 <td>555-555-5555</td>
                 <td><Button type='warning' title='Inactive' size='sm'/></td>
               </TableRow>
               <TableRow>
                 <td>2</td>
-                <td>Jason Walsh</td>
-                <td>jasonwalsh@email.com</td>
+                <td>Jason</td>
+                <td>jason@email.com</td>
                 <td>555-555-5555</td>
                 <td><Button type='success' title='Active' size='sm'/></td>
               </TableRow>
               <TableRow>
                 <td>3</td>
-                <td>Matt Lorey</td>
-                <td>mattlorey@email.com</td>
+                <td>Matt</td>
+                <td>matt@email.com</td>
                 <td>555-555-5555</td>
                 <td><Button type='danger' title='Deactivated' size='sm'/></td>
               </TableRow>
               <TableRow>
                 <td>4</td>
-                <td>Matt Ludwigs</td>
-                <td>mattl@email.com</td>
+                <td>Other Matt</td>
+                <td>othermatt@email.com</td>
                 <td>555-555-5555</td>
                 <td><Button type='success' title='Active' size='sm'/></td>
               </TableRow>
@@ -180,32 +180,22 @@ export class TableDemo extends React.Component {
               <TableRow>
                 <td>1</td>
                 <td>Ashley</td>
-                <td>Fogarty</td>
+                <td>Rockoff</td>
               </TableRow>
               <TableRow>
                 <td>2</td>
                 <td>Matt</td>
-                <td>Lorey</td>
+                <td>Rosenthal</td>
               </TableRow>
               <TableRow>
                 <td>3</td>
                 <td>Jason</td>
-                <td>Walsh</td>
+                <td>Storm</td>
               </TableRow>
               <TableRow>
                 <td>4</td>
                 <td>Matt</td>
-                <td>Ludwigs</td>
-              </TableRow>
-              <TableRow>
-                <td>5</td>
-                <td>Richard</td>
-                <td>Dobson</td>
-              </TableRow>
-              <TableRow>
-                <td>6</td>
-                <td>McGregor</td>
-                <td>Crowley</td>
+                <td>Marubini</td>
               </TableRow>
             </TableBody>
           </Table>
