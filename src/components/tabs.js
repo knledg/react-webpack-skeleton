@@ -7,13 +7,11 @@ import { Panel } from 'src/components';
 export class Tabs extends React.Component {
   static propTypes = {
     align: PropTypes.string,
-    size: PropTypes.string,
     startTab: PropTypes.number,
   }
 
   static defaultProps = {
     align: 'top',
-    size: 'md',
     startTab: null,
   }
 
@@ -76,9 +74,7 @@ export class Tabs extends React.Component {
     const startTab = this.props.startTab && !this.state.clicked ? this.props.startTab : this.state.activeTab;
 
     return (
-      <Panel
-        className={(isHorizontal ? 'horizontal-tabs' : '') + ' tabs-panel'}
-        size={this.props.size}>
+      <Panel className={(isHorizontal ? 'horizontal-tabs' : '') + ' tabs-panel'}>
         <div className={alignment}>
           <ul className='nav nav-tabs'>
            {this.renderTabs(this.props.children, startTab)}
