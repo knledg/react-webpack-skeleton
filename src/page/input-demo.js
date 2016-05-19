@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-flex-proto';
 
-import { Page, Panel, Input, Select } from 'src/components';
+import { Page, Panel, Input, Select, Textarea } from 'src/components';
 
 export class InputDemo extends React.Component {
 
@@ -20,6 +20,7 @@ export class InputDemo extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <Page title='Inputs'>
         <Row>
@@ -154,6 +155,17 @@ export class InputDemo extends React.Component {
                 disabled={true}
                 label='Option 4'
                 onChange={() => {}} />
+            </Panel>
+          </Col>
+          <Col>
+            <Panel title='Textarea'>
+              <Textarea
+                name='textarea'
+                placeholder='Default Input'
+                disabled={false}
+                label='Text Area Label'
+                onChange={e => this.onTextChange('textarea', e)}
+                value={this.state.textarea} />
             </Panel>
           </Col>
         </Row>
