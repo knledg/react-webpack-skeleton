@@ -8,7 +8,6 @@ export class TabsDemo extends React.Component {
       <Page title='Tabs Demo'>
         <Tabs
           align='top'
-          size='md'
           startTab={2} >
           <Tab title='Tab Component'>
             <h2>The Tab Component</h2>
@@ -49,9 +48,7 @@ export class TabsDemo extends React.Component {
           </Tab>
         </Tabs>
 
-        <Tabs
-          align='left'
-          size='xs'>
+        <Tabs align='left'>
           <Tab title='Left Side Tabs'>
             <p>Some content can go here!</p>
           </Tab>
@@ -60,9 +57,7 @@ export class TabsDemo extends React.Component {
           </Tab>
         </Tabs>
 
-        <Tabs
-          align='right'
-          size='xs'>
+        <Tabs align='right'>
           <Tab title='Right Side Tabs'>
             <p>Content!</p>
           </Tab>

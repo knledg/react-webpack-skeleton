@@ -31,7 +31,7 @@ export class Select extends React.Component {
 
   onToggleOpen() {
     this.setState({ isOpen: ! this.state.isOpen }, () => {
-      if (this.state.isOpen) {
+      if (this.state.isOpen && this.props.isSearchable) {
         this.refs['select-search'].focus();
       }
     });
