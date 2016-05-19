@@ -7,10 +7,8 @@ const express = require('express');
 const webpack = require('webpack');
 const config = require('./webpack.config.dev');
 
-let app = express();
+const app = express();
 const compiler = webpack(config);
-
-
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
   noInfo: false,
   publicPath: config.output.publicPath,
@@ -23,7 +21,7 @@ app.use(function(req, res, next) {
   const reqPath = req.url;
   // find the file that the browser is looking for
   const file = _.last(reqPath.split('/'));
-  if (['bundle.js', 'index.html'].indexOf(file) !== -1) {
+  if (['index.html'].indexOf(file) !== -1) {
     res.end(devMiddleware.fileSystem.readFileSync(path.join(config.output.path, file)));
   } else if (file.indexOf('.') === -1) {
     // if the url does not have an extension, assume they've navigated to something like /home and want index.html

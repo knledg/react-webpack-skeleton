@@ -5,7 +5,7 @@ ESLINT = node_modules/.bin/eslint
 
 build:
 	make clean
-	$(WEBPACK) \
+	NODE_ENV=production $(WEBPACK) \
 		--config webpack.config.prod.js \
 		--verbose \
 		--display-chunks \

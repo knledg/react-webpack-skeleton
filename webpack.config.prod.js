@@ -18,7 +18,6 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[name]-[hash].js',
     chunkFilename: '[id]-[hash].chunk.js',
-    publicPath: process.env.BASE_URL.slice(0, -1),
   },
   resolve: {
     root: __dirname,
@@ -40,7 +39,7 @@ module.exports = {
         NODE_ENV: JSON.stringify('production'),
         AUTH0_DOMAIN: JSON.stringify(process.env.AUTH0_DOMAIN),
         AUTH0_PUB_KEY: JSON.stringify(process.env.AUTH0_PUB_KEY),
-        BASE_URL: JSON.stringify(process.env.BASE_URL),
+        BASE_URL: JSON.stringify('/'),
       },
     }),
     new ExtractTextPlugin('[name]-[hash].css', {
