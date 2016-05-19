@@ -1,8 +1,20 @@
 import React from 'react';
 
-import { Page, Panel, Table, TableHead, TableBody, TableRow, Button } from 'src/components';
+import { Page, Panel, Table, TableHead, TableBody, TableRow, Button, EditableField } from 'src/components';
 
 export class TableDemo extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      chromeVisits: 1000,
+    };
+  }
+
+  onEditableChange(key, value) {
+    this.setState({[key]: value});
+  }
+
   render() {
     return (
       <Page title='Table Types'>
@@ -79,7 +91,12 @@ export class TableDemo extends React.Component {
             <TableBody>
               <TableRow>
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/chrome.svg' /></td>
-                <td className='align-right'>2,014 </td>
+                <td className='align-right'>
+                  <EditableField
+                    value={this.state.chromeVisits}
+                    onChange={value => this.onEditableChange('chromeVisits', value)}
+                    onValidate={(value) => {return value > 0;}} />
+                </td>
                 <td className='align-right'>543 </td>
                 <td className='align-right'>11.9% </td>
               </TableRow>
@@ -140,7 +157,7 @@ export class TableDemo extends React.Component {
             </TableBody>
           </Table>
         </Panel>
-        <Panel size='xs' title='Striped Table'>
+        <Panel title='Striped Table'>
           <h5>Rows are striped</h5>
           <Table tableHover={false} tableStriped={true}>
             <TableHead blackMutedBackground={false}>
