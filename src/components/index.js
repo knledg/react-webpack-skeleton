@@ -8,6 +8,7 @@ export * from './page';
 export * from './panel';
 export * from './progress-bar';
 export * from './select';
+export * from './switch';
 export * from './tab';
 export * from './table';
 export * from './table-body';

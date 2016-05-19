@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-flex-proto';
-
-import { Page, Panel, Input, Select, Textarea } from 'src/components';
+import { Page, Panel, Input, Select, Textarea, Switch } from 'src/components';
 
 export class InputDemo extends React.Component {
 
@@ -17,6 +16,10 @@ export class InputDemo extends React.Component {
 
   onTextChange(key, event) {
     this.setState({ [key]: event.currentTarget.value });
+  }
+
+  onSwitchChange() {
+
   }
 
   render() {
@@ -164,6 +167,15 @@ export class InputDemo extends React.Component {
                 label='Text Area Label'
                 onChange={e => this.onTextChange('textarea', e)}
                 value={this.state.textarea} />
+            </Panel>
+          </Col>
+          <Col>
+            <Panel>
+              <Switch type='primary' isOn={true} onChange={()=>alert('I\'ve been clicked')}/>
+              <Switch type='warning'/>
+              <Switch type='danger'  isOn={true}/>
+              <Switch type='info'/>
+              <Switch type='success'  isOn={true}/>
             </Panel>
           </Col>
         </Row>
