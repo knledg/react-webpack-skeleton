@@ -92,7 +92,10 @@ export class TableDemo extends React.Component {
               <TableRow>
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/chrome.svg' /></td>
                 <td className='align-right'>
-                  <EditableField value={this.state.chromeVisits} onChange={value => this.onEditableChange('chromeVisits', value)} />
+                  <EditableField
+                    value={this.state.chromeVisits}
+                    onChange={value => this.onEditableChange('chromeVisits', value)}
+                    onValidate={(value) => {return value > 0;}} />
                 </td>
                 <td className='align-right'>543 </td>
                 <td className='align-right'>11.9% </td>
