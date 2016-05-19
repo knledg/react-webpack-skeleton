@@ -15,3 +15,4 @@ export * from './table-body';
 export * from './table-head';
 export * from './table-row';
 export * from './tabs';
+export * from './textarea';
