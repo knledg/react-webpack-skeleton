@@ -14,8 +14,10 @@ export class Input extends React.Component {
     addonLeft: React.PropTypes.node,
     addonRight: React.PropTypes.node,
     hasFeedback: React.PropTypes.bool,
+    autoFocus: React.PropTypes.bool,
     hasFeedbackIcon: React.PropTypes.bool,
     onValidate: React.PropTypes.func,
+    onKeyDown: React.PropTypes.func,
     value: React.PropTypes.oneOfType([
       React.PropTypes.node,
       React.PropTypes.bool,
@@ -32,6 +34,8 @@ export class Input extends React.Component {
     hasFeedbackIcon: true,
     hasFeedback: true,
     disabled: false,
+    onKeyDown: _.noop,
+    autoFocus: false,
   }
 
   getValidationResult() {
@@ -130,9 +134,11 @@ export class Input extends React.Component {
         disabled={this.props.disabled}
         type={this.props.type}
         placeholder={this.props.placeholder}
+        autoFocus={this.props.autoFocus}
         className={`form-control ${this.props.isRounded ? 'form-control-rounded' : ''}`}
         key={this.props.id}
         onChange={this.props.onChange}
+        onKeyDown={this.props.onKeyDown}
         value={this.props.value} />
     );
   }
