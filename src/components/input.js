@@ -16,7 +16,10 @@ export class Input extends React.Component {
     hasFeedback: React.PropTypes.bool,
     hasFeedbackIcon: React.PropTypes.bool,
     onValidate: React.PropTypes.func,
-    value: React.PropTypes.node.isRequired,
+    value: React.PropTypes.oneOfType([
+      React.PropTypes.node,
+      React.PropTypes.bool,
+    ]).isRequired,
     onChange: React.PropTypes.func.isRequired,
     disabled: React.PropTypes.bool,
     isRounded: React.PropTypes.bool,
