@@ -1,5 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
 
 export class Switch extends React.Component {
 

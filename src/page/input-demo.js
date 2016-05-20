@@ -4,7 +4,12 @@ import { Page, Panel, Input, Select, Textarea, Switch } from 'src/components';
 
 export class InputDemo extends React.Component {
 
-  state = {}
+  constructor(props) {
+    super(props);
+    this.state = {
+      switches: _.fill(Array(5), true),
+    };
+  }
 
   onCloseModal(modalName) {
     this.setState({ [modalName]: false });
@@ -18,8 +23,10 @@ export class InputDemo extends React.Component {
     this.setState({ [key]: event.currentTarget.value });
   }
 
-  onSwitchChange() {
-
+  onSwitchChange(index) {
+    let switches = this.state.switches;
+    switches[index] = !switches[index];
+    this.setState({ switches });
   }
 
   render() {
@@ -171,11 +178,11 @@ export class InputDemo extends React.Component {
           </Col>
           <Col>
             <Panel>
-              <Switch type='primary' isOn={true} onChange={()=>alert('I\'ve been clicked')}/>
-              <Switch type='warning'/>
-              <Switch type='danger'  isOn={true}/>
-              <Switch type='info'/>
-              <Switch type='success'  isOn={true}/>
+              <Switch type='primary' isOn={this.state.switches[0]} onChange={()=>this.onSwitchChange(0)}/>
+              <Switch type='warning' isOn={this.state.switches[1]} onChange={()=>this.onSwitchChange(1)}/>
+              <Switch type='danger' isOn={this.state.switches[2]} onChange={()=>this.onSwitchChange(2)}/>
+              <Switch type='info' isOn={this.state.switches[3]} onChange={()=>this.onSwitchChange(3)}/>
+              <Switch type='success' isOn={this.state.switches[4]} onChange={()=>this.onSwitchChange(4)}/>
             </Panel>
           </Col>
         </Row>
