@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Page, Panel, Button } from 'src/components';
-
-import eventBus from 'src/lib/event-bus';
+import { Page, Panel, Button, eventBus } from 'react-blur-admin';
 
 export class NotificationsDemo extends React.Component {
   render() {

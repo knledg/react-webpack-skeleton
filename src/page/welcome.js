@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Panel } from 'src/components';
+import { Page, Panel } from 'react-blur-admin';
 import { Row, Col } from 'react-flex-proto';
 
 export class Welcome extends React.Component {

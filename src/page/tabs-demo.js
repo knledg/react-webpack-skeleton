@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Page, Tabs, Tab } from 'src/components';
+import { Page, Tabs, Tab } from 'react-blur-admin';
 
 export class TabsDemo extends React.Component {
   render() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import { Page, Panel, ProgressBar } from 'src/components';
+import { Page, Panel, ProgressBar } from 'react-blur-admin';
 
 export class ProgressBars extends React.Component {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Page, Panel } from 'src/components';
+import { Page, Panel } from 'react-blur-admin';
 
 export class About extends React.Component {
   render() {

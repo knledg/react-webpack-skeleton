@@ -2,7 +2,7 @@ import React from 'react';
 import expect from 'expect';
 import Utils from 'react-addons-test-utils';
 
-import { Page } from 'src/components';
+import { Page } from 'react-blur-admin';
 
 describe('Page', () => {
   it('renders an h1', () => {

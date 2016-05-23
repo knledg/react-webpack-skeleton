@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 
 // Components
 import { Sidebar, PageTop } from 'src/layout/components';
-import { Notifications } from 'src/components';
+import { Notifications } from 'react-blur-admin';
 
 // Lib
 import eventBus from 'src/lib/event-bus';

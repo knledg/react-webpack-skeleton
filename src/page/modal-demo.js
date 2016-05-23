@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Page, Panel, Modal, Button } from 'src/components';
+import { Page, Panel, Modal, Button } from 'react-blur-admin';
 
 import {Row, Col} from 'react-flex-proto';
 

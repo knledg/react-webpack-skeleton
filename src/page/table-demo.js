@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Page, Panel, Table, TableHead, TableBody, TableRow, Button, EditableField, Pagination } from 'src/components';
+import { Page, Panel, Table, TableHead, TableBody, TableRow, Button, EditableField, Pagination } from 'react-blur-admin';
 import {Row, Col} from 'react-flex-proto';
 
 export class TableDemo extends React.Component {
