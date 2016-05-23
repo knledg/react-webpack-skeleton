@@ -6,25 +6,38 @@ export class Switch extends React.Component {
     isOn: React.PropTypes.bool,
     onChange: React.PropTypes.func.isRequired,
     type: React.PropTypes.string,
+    className: React.PropTypes.string,
   }
 
   static defaultProps = {
     isOn: true,
     type: 'primary',
+    className: '',
   }
 
+  renderOn() {
+    return (
+      <div className="bootstrap-switch-container">
+        <span className={`bootstrap-switch-handle-on bootstrap-switch-${this.props.type}`}>ON</span>
+        <span className="bootstrap-switch-label">&nbsp;</span>
+      </div>
+    );
+  }
+
+  renderOff() {
+    return (
+      <div className="bootstrap-switch-container">
+        <span className="bootstrap-switch-label pull-left">&nbsp;</span>
+        <span className="bootstrap-switch-handle-off bootstrap-switch-default pull-right">OFF</span>
+      </div>
+    );
+  }
 
   render() {
-    const widthOffset = this.props.isOn ? '0' : '-50%';
-
     return (
-      <div className={`switch-container ${this.props.isOn ? this.props.type : ''}`} style={{marginRight: '10px'}} onClick={this.props.onChange}>
-        <div className="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-small bootstrap-switch-animate bootstrap-switch-on" style={{width: '84px'}}>
-          <div className="bootstrap-switch-container" style={{width: '143px', marginLeft: widthOffset}}>
-            <span className={`bootstrap-switch-handle-on bootstrap-switch-${this.props.type}`} style={{width: '41px'}}>ON</span>
-            <span className="bootstrap-switch-label" style={{width: '41px'}}>&nbsp;</span>
-            <span className="bootstrap-switch-handle-off bootstrap-switch-default" style={{width: '41px'}}>OFF</span>
-          </div>
+      <div className={`switch-container ${this.props.isOn ? this.props.type : ''} ${this.props.className}`} onClick={this.props.onChange}>
+        <div className="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-small bootstrap-switch-animate bootstrap-switch-on">
+         {this.props.isOn ? this.renderOn() : this.renderOff()}
         </div>
       </div>
     );

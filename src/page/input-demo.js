@@ -178,11 +178,23 @@ export class InputDemo extends React.Component {
           </Col>
           <Col>
             <Panel>
-              <Switch type='primary' isOn={this.state.switches[0]} onChange={()=>this.onSwitchChange(0)}/>
-              <Switch type='warning' isOn={this.state.switches[1]} onChange={()=>this.onSwitchChange(1)}/>
-              <Switch type='danger' isOn={this.state.switches[2]} onChange={()=>this.onSwitchChange(2)}/>
-              <Switch type='info' isOn={this.state.switches[3]} onChange={()=>this.onSwitchChange(3)}/>
-              <Switch type='success' isOn={this.state.switches[4]} onChange={()=>this.onSwitchChange(4)}/>
+              <Row>
+                <Col grow={false}>
+                  <Switch type='primary' isOn={this.state.switches[0]} onChange={()=>this.onSwitchChange(0)}/>
+                </Col>
+                <Col grow={false}>
+                  <Switch type='warning' isOn={this.state.switches[1]} onChange={()=>this.onSwitchChange(1)}/>
+                </Col>
+                <Col grow={false}>
+                  <Switch type='danger' isOn={this.state.switches[2]} onChange={()=>this.onSwitchChange(2)}/>
+                </Col>
+                <Col grow={false}>
+                  <Switch type='info' isOn={this.state.switches[3]} onChange={()=>this.onSwitchChange(3)}/>
+                </Col>
+                <Col grow={false}>
+                  <Switch type='success' isOn={this.state.switches[4]} onChange={()=>this.onSwitchChange(4)}/>
+                </Col>
+              </Row>
             </Panel>
           </Col>
         </Row>

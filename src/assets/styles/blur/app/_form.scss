@@ -108,6 +108,7 @@ textarea.form-control {
 }
 
 .bootstrap-switch {
+  width: 86px;
   border-radius: 5px;
   border: 1px solid $default;
   transition: border-color ease-in-out .7s, box-shadow ease-in-out .7s;
@@ -124,12 +125,14 @@ textarea.form-control {
     }
   }
   .bootstrap-switch-container {
+    width: '143px';
     border-radius: 0;
     &:focus {
       outline: none;
     }
   }
   .bootstrap-switch-handle-on {
+    width: '41px';
     border-radius: 0;
     &.bootstrap-switch-default {
       background: $default;
@@ -151,10 +154,12 @@ textarea.form-control {
     }
   }
   .bootstrap-switch-handle-off {
+    width: 41px;
     border-radius: 0;
   }
 
   .bootstrap-switch-label {
+    width: 41px;
     background: transparent;
   }
 
