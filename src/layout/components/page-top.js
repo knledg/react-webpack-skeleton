@@ -7,7 +7,7 @@ import eventBus from 'src/lib/event-bus';
 export class PageTop extends React.Component {
 
   static propTypes = {
-    user: React.PropTypes.object.isRequired,
+    user: React.PropTypes.object,
     location: React.PropTypes.shape({
       pathname: React.PropTypes.string.isRequired,
       query: React.PropTypes.object.isRequired,

@@ -98,12 +98,23 @@ export class InputDemo extends React.Component {
             <Panel title='Select Dropdowns'>
               <Select
                 placeholder='Standard Select'
-                options={[ { value: 1, label: 'One' } ]} />
+                value={this.state.selectOne}
+                options={[ { value: 1, label: 'One' } ]}
+                onChange={value => this.setState({ selectOne: value })} />
 
               <Select
                 placeholder='With Search'
                 isSearchable={true}
-                options={[ { value: 1, label: 'One' }, { value: 2, label: 'Two' } ]} />
+                options={[
+                  { value: 1, label: 'One' },
+                  { value: 2, label: 'Two' },
+                  { value: 3, label: 'Three' },
+                  { value: 4, label: 'Four' },
+                  { value: 5, label: 'Five' },
+                  { value: 6, label: 'Six' },
+                ]}
+                onChange={value => this.setState({ selectTwo: value })}
+                value={this.state.selectTwo} />
             </Panel>
           </Col>
           <Col>

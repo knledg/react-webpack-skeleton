@@ -69,6 +69,16 @@ export class ButtonDemo extends React.Component {
               <Button type='success' disabled={true} />
             </Panel>
           </Col>
+          <Col>
+            <Panel title='Custom Icons Buttons' size='md'>
+              <Button type='default' icon={<i className='fa fa-chevron-circle-down' />} />
+              <Button type='add' icon={<i className='fa fa-chevron-circle-left' />} />
+              <Button type='remove' icon={<i className='fa fa-chevron-circle-right' />} />
+              <Button type='info' icon={<i className='fa fa-chevron-circle-up' />} />
+              <Button type='warning' icon={<i className='fa fa-chevron-down' />} />
+              <Button type='success' icon={<i className='fa fa-chevron-up' />} />
+            </Panel>
+          </Col>
         </Row>
       </Page>
     );

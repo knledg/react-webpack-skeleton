@@ -62,7 +62,7 @@ export class TableDemo extends React.Component {
         </Panel>
         <Panel title='Table Without Hover Effect'>
           <h5>When mousing over table rows will not respond</h5>
-          <Table tableHover={false}>
+          <Table hover={false}>
             <TableHead blackMutedBackground={true}>
               <th>Browser</th>
               <th>Visits</th>
@@ -92,7 +92,7 @@ export class TableDemo extends React.Component {
           </Table>
         </Panel>
         <Panel title='Table With Borders'>
-          <Table tableHover={false} tableBordered={true}>
+          <Table hover={false} border={true}>
             <TableHead blackMutedBackground={true}>
               <th className='align-right'>Browser</th>
               <th className='align-right'>Visits</th>
@@ -128,7 +128,7 @@ export class TableDemo extends React.Component {
         </Panel>
         <Panel title='Condensed Table'>
           <h5>There will be less spacing between components</h5>
-          <Table tableHover={false} tableCondensed={true}>
+          <Table hover={false} condense={true}>
             <TableHead blackMutedBackground={false}>
               <th>#</th>
               <th>Full Name</th>
@@ -170,7 +170,7 @@ export class TableDemo extends React.Component {
         </Panel>
         <Panel title='Striped Table'>
           <h5>Rows are striped</h5>
-          <Table tableHover={false} tableStriped={true}>
+          <Table hover={false} stripe={true}>
             <TableHead blackMutedBackground={false}>
               <th>#</th>
               <th>First Name</th>
@@ -202,7 +202,7 @@ export class TableDemo extends React.Component {
         </Panel>
         <Panel title='Responsive Table'>
           <h5>Table responds to window size</h5>
-          <Table tableResponsive={true}>
+          <Table>
             <TableHead blackMutedBackground={false}>
               <th>#</th>
               <th>First Name</th>
