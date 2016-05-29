@@ -40,6 +40,16 @@ export class ButtonDemo extends React.Component {
             </Panel>
           </Col>
           <Col>
+            <Panel title='Mini Medium Buttons' size='md'>
+              <Button type='default' size='mm' />
+              <Button type='add' size='mm' />
+              <Button type='remove' size='mm' />
+              <Button type='info' size='mm' />
+              <Button type='warning' size='mm' />
+              <Button type='success' size='mm' />
+            </Panel>
+          </Col>
+          <Col>
             <Panel title='Small Buttons' size='md'>
               <Button type='default' size='sm' />
               <Button type='add' size='sm' />
