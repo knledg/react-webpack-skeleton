@@ -33,7 +33,7 @@ export class ProgressBars extends React.Component {
 
     this.setState({percentage});
     if (! done ) {
-      this.timer = setTimeout(() => this.updatePercentages(), Math.random(500) + 250);
+      this.timer = setTimeout(e => this.updatePercentages(), Math.random(500) + 250);
     }
   }
 

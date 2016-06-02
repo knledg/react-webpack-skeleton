@@ -18,6 +18,7 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[name]-[hash].js',
     chunkFilename: '[id]-[hash].chunk.js',
+    publicPath: process.env.BASE_URL, // needs to be root
   },
   resolve: {
     root: __dirname,
@@ -39,7 +40,7 @@ module.exports = {
         NODE_ENV: JSON.stringify('production'),
         AUTH0_DOMAIN: JSON.stringify(process.env.AUTH0_DOMAIN),
         AUTH0_PUB_KEY: JSON.stringify(process.env.AUTH0_PUB_KEY),
-        BASE_URL: JSON.stringify('/'),
+        BASE_URL: JSON.stringify(process.env.BASE_URL),
       },
     }),
     new ExtractTextPlugin('[name]-[hash].css', {
@@ -54,7 +55,11 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
+      {
+        test: /\.js$/,
+        exclude: [ /node_modules/, /__tests__/ ],
+        loader: 'babel-loader',
+      },
       { test: /\.json$/, loader: 'json' },
       { test: /\.(png|gif|jpg)$/, loader: 'url?limit=8192' },
       { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url?limit=10000&minetype=application/font-woff2' },

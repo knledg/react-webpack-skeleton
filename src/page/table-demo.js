@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Page, Panel, Table, TableHead, TableBody, TableRow, Button, EditableField, Pagination } from 'react-blur-admin';
+import { Page, Panel, Table, TableHead, TableBody, TableRow, Button, EditableText, Pagination } from 'react-blur-admin';
 import {Row, Col} from 'react-flex-proto';
 
 export class TableDemo extends React.Component {
@@ -103,7 +103,7 @@ export class TableDemo extends React.Component {
               <TableRow>
                 <td><img src='http://akveo.com/blur-admin/assets/img/app/browsers/chrome.svg' /></td>
                 <td className='align-right'>
-                  <EditableField
+                  <EditableText
                     value={this.state.chromeVisits}
                     onChange={value => this.onEditableChange('chromeVisits', value)}
                     onValidate={(value) => {return value > 0;}} />

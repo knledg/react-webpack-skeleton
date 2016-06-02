@@ -10,83 +10,195 @@ export class ButtonDemo extends React.Component {
       <Page title='Buttons'>
         <Row>
           <Col>
-            <Panel title='Large Buttons' size='md'>
-              <Button type='default' size='lg' />
-              <Button type='add' size='lg' />
-              <Button type='remove' size='lg' />
-              <Button type='info' size='lg' />
-              <Button type='warning' size='lg' />
-              <Button type='success' size='lg' />
+            <Panel title='Large Buttons'>
+              <Row>
+                <Col grow={false}>
+                  <Button type='default' size='lg' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='add' size='lg' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='remove' size='lg' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='info' size='lg' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='warning' size='lg' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='success' size='lg' />
+                </Col>
+              </Row>
             </Panel>
           </Col>
           <Col>
-            <Panel title='Extra Medium Buttons' size='md'>
-              <Button type='default' size='xm' />
-              <Button type='add' size='xm' />
-              <Button type='remove' size='xm' />
-              <Button type='info' size='xm' />
-              <Button type='warning' size='xm' />
-              <Button type='success' size='xm' />
+            <Panel title='Extra Medium Buttons'>
+              <Row>
+                <Col grow={false}>
+                  <Button type='default' size='xm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='add' size='xm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='remove' size='xm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='info' size='xm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='warning' size='xm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='success' size='xm' />
+                </Col>
+              </Row>
             </Panel>
           </Col>
           <Col>
-            <Panel title='Medium Buttons' size='md'>
-              <Button type='default' />
-              <Button type='add' />
-              <Button type='remove' />
-              <Button type='info' />
-              <Button type='warning' />
-              <Button type='success' />
+            <Panel title='Medium Buttons'>
+              <Row>
+                <Col grow={false}>
+                  <Button type='default' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='add' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='remove' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='info' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='warning' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='success' />
+                </Col>
+              </Row>
             </Panel>
           </Col>
           <Col>
-            <Panel title='Mini Medium Buttons' size='md'>
-              <Button type='default' size='mm' />
-              <Button type='add' size='mm' />
-              <Button type='remove' size='mm' />
-              <Button type='info' size='mm' />
-              <Button type='warning' size='mm' />
-              <Button type='success' size='mm' />
+            <Panel title='Mini Medium Buttons'>
+              <Row>
+                <Col grow={false}>
+                  <Button type='default' size='mm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='add' size='mm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='remove' size='mm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='info' size='mm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='warning' size='mm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='success' size='mm' />
+                </Col>
+              </Row>
             </Panel>
           </Col>
           <Col>
-            <Panel title='Small Buttons' size='md'>
-              <Button type='default' size='sm' />
-              <Button type='add' size='sm' />
-              <Button type='remove' size='sm' />
-              <Button type='info' size='sm' />
-              <Button type='warning' size='sm' />
-              <Button type='success' size='sm' />
+            <Panel title='Small Buttons'>
+              <Row>
+                <Col grow={false}>
+                  <Button type='default' size='sm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='add' size='sm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='remove' size='sm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='info' size='sm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='warning' size='sm' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='success' size='sm' />
+                </Col>
+              </Row>
             </Panel>
           </Col>
           <Col>
-            <Panel title='XS Buttons' size='md'>
-              <Button type='default' size='xs' />
-              <Button type='add' size='xs' />
-              <Button type='remove' size='xs' />
-              <Button type='info' size='xs' />
-              <Button type='warning' size='xs' />
-              <Button type='success' size='xs' />
+            <Panel title='XS Buttons'>
+              <Row>
+                <Col grow={false}>
+                  <Button type='default' size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='add' size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='remove' size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='info' size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='warning' size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='success' size='xs' />
+                </Col>
+              </Row>
             </Panel>
           </Col>
           <Col>
-            <Panel title='Disabled Buttons' size='md'>
-              <Button type='default' disabled={true} />
-              <Button type='add' disabled={true} />
-              <Button type='remove' disabled={true} />
-              <Button type='info' disabled={true} />
-              <Button type='warning' disabled={true} />
-              <Button type='success' disabled={true} />
+            <Panel title='Disabled Buttons'>
+              <Row>
+                <Col grow={false}>
+                  <Button type='default' disabled={true} size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='add' disabled={true} size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='remove' disabled={true} size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='info' disabled={true} size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='warning' disabled={true} size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='success' disabled={true} size='xs' />
+                </Col>
+              </Row>
             </Panel>
           </Col>
           <Col>
-            <Panel title='Custom Icons Buttons' size='md'>
-              <Button type='default' icon={<i className='fa fa-chevron-circle-down' />} />
-              <Button type='add' icon={<i className='fa fa-chevron-circle-left' />} />
-              <Button type='remove' icon={<i className='fa fa-chevron-circle-right' />} />
-              <Button type='info' icon={<i className='fa fa-chevron-circle-up' />} />
-              <Button type='warning' icon={<i className='fa fa-chevron-down' />} />
-              <Button type='success' icon={<i className='fa fa-chevron-up' />} />
+            <Panel title='Custom Icons Buttons'>
+              <Row>
+                <Col grow={false}>
+                  <Button type='default' icon={<i className='fa fa-chevron-circle-down' />} size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='add' icon={<i className='fa fa-chevron-circle-left' />} size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='remove' icon={<i className='fa fa-chevron-circle-right' />} size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='info' icon={<i className='fa fa-chevron-circle-up' />} size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='warning' icon={<i className='fa fa-chevron-down' />} size='xs' />
+                </Col>
+                <Col grow={false}>
+                  <Button type='success' icon={<i className='fa fa-chevron-up' />} size='xs' />
+                </Col>
+              </Row>
             </Panel>
           </Col>
         </Row>

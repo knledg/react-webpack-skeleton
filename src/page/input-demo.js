@@ -37,38 +37,38 @@ export class InputDemo extends React.Component {
             <Panel title='Text Inputs'>
               <Input
                 onChange={e => this.onTextChange('success', e)}
-                onValidate={() => true}
+                onValidate={e => true}
                 label='Success'
                 value={this.state.success} />
 
               <Input
                 onChange={e => this.onTextChange('success2', e)}
-                onValidate={() => true}
+                onValidate={e => true}
                 label='Success No Icon'
                 hasFeedbackIcon={false}
                 value={this.state.success2} />
 
               <Input
                 onChange={e => this.onTextChange('fail', e)}
-                onValidate={() => false}
+                onValidate={e => false}
                 label='Error'
                 value={this.state.fail} />
 
               <Input
                 onChange={e => this.onTextChange('warning', e)}
-                onValidate={() => 'warning'}
+                onValidate={e => 'warning'}
                 label='Warning'
                 value={this.state.warning} />
 
               <Input
-                onValidate={() => true}
+                onValidate={e => true}
                 label='Addon Left'
                 addonLeft={<i className='fa fa-check' />}
                 value={this.state.addonLeft}
                 onChange={e => this.onTextChange('addonLeft', e)} />
 
               <Input
-                onValidate={() => true}
+                onValidate={e => true}
                 label='Addon Right'
                 addonRight={<i className='fa fa-check' />}
                 value={this.state.addonRight}
@@ -78,7 +78,7 @@ export class InputDemo extends React.Component {
                 label='Disabled'
                 disabled={true}
                 value='Disabled'
-                onChange={() => {}} />
+                onChange={e => {}} />
 
               <Input
                 label='Placeholder'
@@ -121,32 +121,32 @@ export class InputDemo extends React.Component {
             <Panel title='Checkboxes'>
               <Input
                 type='checkbox'
-                onValidate={() => 'warning'}
+                onValidate={e => 'warning'}
                 label='Warning'
-                onChange={() => {}} />
+                onChange={e => {}} />
 
               <Input
                 type='checkbox'
-                onValidate={() => true}
+                onValidate={e => true}
                 label='Success'
-                onChange={() => {}} />
+                onChange={e => {}} />
 
               <Input
                 type='checkbox'
-                onValidate={() => false}
+                onValidate={e => false}
                 label='Error'
-                onChange={() => {}} />
+                onChange={e => {}} />
 
               <Input
                 type='checkbox'
                 label='No validation'
-                onChange={() => {}} />
+                onChange={e => {}} />
 
               <Input
                 type='checkbox'
                 disabled={true}
                 label='Disabled'
-                onChange={() => {}} />
+                onChange={e => {}} />
             </Panel>
           </Col>
           <Col>
@@ -155,26 +155,26 @@ export class InputDemo extends React.Component {
                 type='radio'
                 name='firstSet'
                 label='Option 1'
-                onChange={() => {}} />
+                onChange={e => {}} />
 
               <Input
                 type='radio'
                 name='firstSet'
                 label='Option 2'
-                onChange={() => {}} />
+                onChange={e => {}} />
 
               <Input
                 type='radio'
                 name='firstSet'
                 label='Option 3'
-                onChange={() => {}} />
+                onChange={e => {}} />
 
               <Input
                 type='radio'
                 name='firstSet'
                 disabled={true}
                 label='Option 4'
-                onChange={() => {}} />
+                onChange={e => {}} />
             </Panel>
           </Col>
           <Col>
@@ -191,19 +191,19 @@ export class InputDemo extends React.Component {
             <Panel>
               <Row>
                 <Col grow={false}>
-                  <Switch type='primary' isOn={this.state.switches[0]} onChange={()=>this.onSwitchChange(0)}/>
+                  <Switch type='primary' isOn={this.state.switches[0]} onChange={e => this.onSwitchChange(0)}/>
                 </Col>
                 <Col grow={false}>
-                  <Switch type='warning' isOn={this.state.switches[1]} onChange={()=>this.onSwitchChange(1)}/>
+                  <Switch type='warning' isOn={this.state.switches[1]} onChange={e => this.onSwitchChange(1)}/>
                 </Col>
                 <Col grow={false}>
-                  <Switch type='danger' isOn={this.state.switches[2]} onChange={()=>this.onSwitchChange(2)}/>
+                  <Switch type='danger' isOn={this.state.switches[2]} onChange={e => this.onSwitchChange(2)}/>
                 </Col>
                 <Col grow={false}>
-                  <Switch type='info' isOn={this.state.switches[3]} onChange={()=>this.onSwitchChange(3)}/>
+                  <Switch type='info' isOn={this.state.switches[3]} onChange={e => this.onSwitchChange(3)}/>
                 </Col>
                 <Col grow={false}>
-                  <Switch type='success' isOn={this.state.switches[4]} onChange={()=>this.onSwitchChange(4)}/>
+                  <Switch type='success' isOn={this.state.switches[4]} onChange={e => this.onSwitchChange(4)}/>
                 </Col>
               </Row>
             </Panel>
