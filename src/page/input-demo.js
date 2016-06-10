@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-flex-proto';
-import { Page, Panel, Input, Select, Textarea, Switch } from 'react-blur-admin';
+import { Page, Panel, Input, Select, Textarea, Switch, Breadcrumbs } from 'react-blur-admin';
+import { Link } from 'react-router';
 
 export class InputDemo extends React.Component {
 
@@ -31,7 +32,7 @@ export class InputDemo extends React.Component {
 
   render() {
     return (
-      <Page title='Inputs'>
+      <Page actionBar={<Breadcrumbs><Link to='/'>Home</Link>Inputs</Breadcrumbs>} title='Inputs'>
         <Row>
           <Col>
             <Panel title='Text Inputs'>
