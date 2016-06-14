@@ -1,0 +1,7 @@
+machine:
+  node:
+    version: v6.2.1
+
+test:
+  post:
+    - npm run lint-no-fix
