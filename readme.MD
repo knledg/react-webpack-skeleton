@@ -2,6 +2,10 @@
 
 [Demo](http://knledg.github.io/react-webpack-skeleton/)
 
+## Build Status
+
+[![CircleCI](https://circleci.com/gh/knledg/react-webpack-skeleton/tree/master.svg?style=svg)](https://circleci.com/gh/knledg/react-webpack-skeleton/tree/master)
+
 ## Setup
 
 - `git clone https://github.com/knledg/react-webpack-skeleton.git your-project`
