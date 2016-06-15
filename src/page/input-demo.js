@@ -9,7 +9,7 @@ export class InputDemo extends React.Component {
     super(props);
     this.state = {
       switches: _.fill(Array(5), true),
-      editableSelect3: <Button type='primary' size='md' title='Renders Value' isIconHidden={true}/>,
+      editableSelect3: 1,
     };
   }
 
@@ -166,14 +166,14 @@ export class InputDemo extends React.Component {
                 <EditableSelect
                   placeholder='With Render Value'
                   label='Editable Select Label'
-                  onRenderValue={(value) => value}
+                  onRenderValue={(value) => <Button title={`Render Value ${value}`} type='primary' size='md' isIconHidden={true}/>}
                   options={[
-                    { value: 1, label: 'One' },
-                    { value: 2, label: 'Two' },
-                    { value: 3, label: 'Three' },
-                    { value: 4, label: 'Four' },
-                    { value: 5, label: 'Five' },
-                    { value: 6, label: 'Six' },
+                    { value: 1, label: '1' },
+                    { value: 2, label: '2' },
+                    { value: 3, label: '3' },
+                    { value: 4, label: '4' },
+                    { value: 5, label: '5' },
+                    { value: 6, label: '6' },
                   ]}
                   onChange={value => this.onSelectChange('editableSelect3', value)}
                   value={this.state.editableSelect3} />
