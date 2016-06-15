@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Page, Panel, Button, eventBus, Breadcrumbs } from 'react-blur-admin';
+import { Page, Panel, Button, eventBus, Alert, Breadcrumbs } from 'react-blur-admin';
 import { Link } from 'react-router';
 import {Row, Col} from 'react-flex-proto';
 
@@ -24,6 +24,24 @@ export class NotificationsDemo extends React.Component {
             </Col>
           </Row>
         </Panel>
+        <Row>
+          <Col>
+            <Panel title='Alert Bar Notifications (Non-closable)'>
+              <Alert type='success'>Yay! You did the thing!</Alert>
+              <Alert type='info'>This alert is informative!</Alert>
+              <Alert type='warning'>Oh no, you're about to do a bad thing!</Alert>
+              <Alert type='danger'>*gasp*! You did a bad thing!</Alert>
+            </Panel>
+          </Col>
+          <Col>
+            <Panel title='Alert Bar Notifications (Closable)'>
+              <Alert isDismissible={true} type='success'>Yay! You did the thing!</Alert>
+              <Alert isDismissible={true} type='info'>This alert is informative!</Alert>
+              <Alert isDismissible={true} type='warning'>Oh no, you're about to do a bad thing!</Alert>
+              <Alert isDismissible={true} type='danger'>*gasp*! You did a bad thing!</Alert>
+            </Panel>
+          </Col>
+        </Row>
       </Page>
     );
   }
