@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Page, Panel, Table, TableHead, TableBody, TableRow, Button, EditableText, Pagination } from 'react-blur-admin';
+import { Page, Panel, Table, TableHead, TableBody, TableRow, Button, EditableText, Pagination, Breadcrumbs } from 'react-blur-admin';
+import { Link } from 'react-router';
+
 import {Row, Col} from 'react-flex-proto';
 
 export class TableDemo extends React.Component {
@@ -23,7 +25,7 @@ export class TableDemo extends React.Component {
 
   render() {
     return (
-      <Page title='Table Types'>
+      <Page actionBar={<Breadcrumbs><Link to='/'>Home</Link>Table Types</Breadcrumbs>} title='Table Types'>
         <Panel title='Table with Hover Effect'>
           <h5>When mousing over table rows will respond</h5>
           <Table>

@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { Page, Panel, Button, eventBus, Alert } from 'react-blur-admin';
+import { Page, Panel, Button, eventBus, Alert, Breadcrumbs } from 'react-blur-admin';
+import { Link } from 'react-router';
 import {Row, Col} from 'react-flex-proto';
 
 export class NotificationsDemo extends React.Component {
   render() {
     return (
-      <Page title='Notifications'>
+      <Page actionBar={<Breadcrumbs><Link to='/'>Home</Link>Notifications Demo</Breadcrumbs>} title='Notifications Demo'>
         <Panel title='Message Notifications'>
           <Row>
             <Col grow={false}>

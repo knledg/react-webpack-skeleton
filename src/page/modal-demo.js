@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Page, Panel, Modal, Button } from 'react-blur-admin';
+import { Page, Panel, Modal, Button, Breadcrumbs } from 'react-blur-admin';
+import { Link } from 'react-router';
 
 import {Row, Col} from 'react-flex-proto';
 
@@ -23,7 +24,7 @@ export class ModalDemo extends React.Component {
 
   render() {
     return (
-      <Page title='Modals'>
+      <Page actionBar={<Breadcrumbs><Link to='/'>Home</Link>Modals</Breadcrumbs>} title='Modals'>
         <Modal type='success' title='Woot' isOpen={this.state.successModal} onClose={e => this.onCloseModal('successModal')}>
           You did a thing!
         </Modal>
