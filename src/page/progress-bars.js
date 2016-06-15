@@ -1,7 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 
-import { Page, Panel, ProgressBar } from 'react-blur-admin';
+import { Page, Panel, ProgressBar, Breadcrumbs } from 'react-blur-admin';
+import { Link } from 'react-router';
 
 export class ProgressBars extends React.Component {
 
@@ -39,7 +40,7 @@ export class ProgressBars extends React.Component {
 
   render() {
     return (
-      <Page title='Progress Bars ♥'>
+      <Page actionBar={<Breadcrumbs><Link to='/'>Home</Link>Progress Bars</Breadcrumbs>} title='Progress Bars ♥'>
         <Panel title='Basic'>
           <ProgressBar type='success' percentage={this.state.percentage[0]}/>
           <ProgressBar type='warning' percentage={this.state.percentage[1]}/>
