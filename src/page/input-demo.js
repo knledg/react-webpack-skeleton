@@ -125,59 +125,67 @@ export class InputDemo extends React.Component {
           </Col>
           <Col>
             <Panel title='Editable Select Dropdowns'>
-              <Col>
-                <EditableSelect
-                  placeholder='Default Select'
-                  label='Editable Select Label'
-                  options={[
-                    { value: 1, label: 'One' },
-                    { value: 2, label: 'Two' },
-                    { value: 3, label: 'Three' },
-                    { value: 4, label: 'Four' },
-                    { value: 5, label: 'Five' },
-                    { value: 6, label: 'Six' },
-                  ]}
-                  onChange={value => this.onSelectChange('editableSelect', value)}
-                  value={this.state.editableSelect} />
-              </Col>
-              <Col>
-                <EditableSelect
-                  placeholder='With Search'
-                  label='Editable Select Label'
-                  isSearchable={true}
-                  options={[
-                    { value: 1, label: 'One' },
-                    { value: 2, label: 'Two' },
-                    { value: 3, label: 'Three' },
-                    { value: 4, label: 'Four' },
-                    { value: 5, label: 'Five' },
-                    { value: 6, label: 'Six' },
-                  ]}
-                  onChange={value => this.onSelectChange('editableSelect2', value)}
-                  value={this.state.editableSelect2} />
-              </Col>
-              <Col>
-                <EditableSelect
-                  placeholder='Disabled'
-                  label='Editable Select Label'
-                  disabled={true} />
-              </Col>
-              <Col>
-                <EditableSelect
-                  placeholder='With Render Value'
-                  label='Editable Select Label'
-                  onRenderValue={(value) => <Button title={`Render Value ${value}`} type='primary' size='md' isIconHidden={true}/>}
-                  options={[
-                    { value: 1, label: '1' },
-                    { value: 2, label: '2' },
-                    { value: 3, label: '3' },
-                    { value: 4, label: '4' },
-                    { value: 5, label: '5' },
-                    { value: 6, label: '6' },
-                  ]}
-                  onChange={value => this.onSelectChange('editableSelect3', value)}
-                  value={this.state.editableSelect3} />
-              </Col>
+              <Row>
+                <Col>
+                  <EditableSelect
+                    placeholder='Default Select'
+                    label='Editable Select Label'
+                    options={[
+                      { value: 1, label: 'One' },
+                      { value: 2, label: 'Two' },
+                      { value: 3, label: 'Three' },
+                      { value: 4, label: 'Four' },
+                      { value: 5, label: 'Five' },
+                      { value: 6, label: 'Six' },
+                    ]}
+                    onChange={value => this.onSelectChange('editableSelect', value)}
+                    value={this.state.editableSelect} />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <EditableSelect
+                    placeholder='With Search'
+                    label='Editable Select Label'
+                    isSearchable={true}
+                    options={[
+                      { value: 1, label: 'One' },
+                      { value: 2, label: 'Two' },
+                      { value: 3, label: 'Three' },
+                      { value: 4, label: 'Four' },
+                      { value: 5, label: 'Five' },
+                      { value: 6, label: 'Six' },
+                    ]}
+                    onChange={value => this.onSelectChange('editableSelect2', value)}
+                    value={this.state.editableSelect2} />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <EditableSelect
+                    placeholder='Disabled'
+                    label='Editable Select Label'
+                    disabled={true} />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <EditableSelect
+                    placeholder='With Render Value'
+                    label='Editable Select Label'
+                    onRenderValue={(value) => <Button title={`Render Value ${value}`} type='primary' size='md' isIconHidden={true}/>}
+                    options={[
+                      { value: 1, label: '1' },
+                      { value: 2, label: '2' },
+                      { value: 3, label: '3' },
+                      { value: 4, label: '4' },
+                      { value: 5, label: '5' },
+                      { value: 6, label: '6' },
+                    ]}
+                    onChange={value => this.onSelectChange('editableSelect3', value)}
+                    value={this.state.editableSelect3} />
+                </Col>
+              </Row>
             </Panel>
           </Col>
           <Col>
