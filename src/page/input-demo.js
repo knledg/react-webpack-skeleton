@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-flex-proto';
-import { Page, Panel, Input, Select, Textarea, Switch, Breadcrumbs } from 'react-blur-admin';
+import { Page, Panel, Input, Select, Textarea, Switch, Breadcrumbs, EditableSelect, Button } from 'react-blur-admin';
 import { Link } from 'react-router';
 
 export class InputDemo extends React.Component {
@@ -9,6 +9,7 @@ export class InputDemo extends React.Component {
     super(props);
     this.state = {
       switches: _.fill(Array(5), true),
+      editableSelect3: 1,
     };
   }
 
@@ -22,6 +23,10 @@ export class InputDemo extends React.Component {
 
   onTextChange(key, event) {
     this.setState({ [key]: event.currentTarget.value });
+  }
+
+  onSelectChange(key, value) {
+    this.setState({ [key]: value});
   }
 
   onSwitchChange(index) {
@@ -116,6 +121,71 @@ export class InputDemo extends React.Component {
                 ]}
                 onChange={value => this.setState({ selectTwo: value })}
                 value={this.state.selectTwo} />
+            </Panel>
+          </Col>
+          <Col>
+            <Panel title='Editable Select Dropdowns'>
+              <Row>
+                <Col>
+                  <EditableSelect
+                    placeholder='Default Select'
+                    label='Editable Select Label'
+                    options={[
+                      { value: 1, label: 'One' },
+                      { value: 2, label: 'Two' },
+                      { value: 3, label: 'Three' },
+                      { value: 4, label: 'Four' },
+                      { value: 5, label: 'Five' },
+                      { value: 6, label: 'Six' },
+                    ]}
+                    onChange={value => this.onSelectChange('editableSelect', value)}
+                    value={this.state.editableSelect} />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <EditableSelect
+                    placeholder='With Search'
+                    label='Editable Select Label'
+                    isSearchable={true}
+                    options={[
+                      { value: 1, label: 'One' },
+                      { value: 2, label: 'Two' },
+                      { value: 3, label: 'Three' },
+                      { value: 4, label: 'Four' },
+                      { value: 5, label: 'Five' },
+                      { value: 6, label: 'Six' },
+                    ]}
+                    onChange={value => this.onSelectChange('editableSelect2', value)}
+                    value={this.state.editableSelect2} />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <EditableSelect
+                    placeholder='Disabled'
+                    label='Editable Select Label'
+                    disabled={true} />
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <EditableSelect
+                    placeholder='With Render Value'
+                    label='Editable Select Label'
+                    onRenderValue={(value) => <Button title={`Render Value ${value}`} type='primary' size='md' isIconHidden={true}/>}
+                    options={[
+                      { value: 1, label: '1' },
+                      { value: 2, label: '2' },
+                      { value: 3, label: '3' },
+                      { value: 4, label: '4' },
+                      { value: 5, label: '5' },
+                      { value: 6, label: '6' },
+                    ]}
+                    onChange={value => this.onSelectChange('editableSelect3', value)}
+                    value={this.state.editableSelect3} />
+                </Col>
+              </Row>
             </Panel>
           </Col>
           <Col>
