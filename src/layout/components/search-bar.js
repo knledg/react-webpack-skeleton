@@ -64,6 +64,9 @@ export class SearchBar extends React.Component {
         loading: false,
       });
     }.bind(this), 200);
+    this.setState({
+      suggestions: this.getSuggestions(value),
+    });
   }
 
   getSuggestions(value) {
