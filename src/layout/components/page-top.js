@@ -50,7 +50,10 @@ export class PageTop extends React.Component {
   renderSearch() {
     return (
       <div className="search">
-        <SearchBar/>
+        <SearchBar>
+          <i className="ion-ios-search-strong"></i>
+          <input id="searchInput" type="text" />
+        </SearchBar>
       </div>
     );
   }
