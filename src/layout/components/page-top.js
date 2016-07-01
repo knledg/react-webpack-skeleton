@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import {SearchBar} from 'src/layout/components/search-bar';
 
 // Lib
 import eventBus from 'src/lib/event-bus';
@@ -49,8 +50,10 @@ export class PageTop extends React.Component {
   renderSearch() {
     return (
       <div className="search">
-        <i className="ion-ios-search-strong"></i>
-        <input id="searchInput" type="text" placeholder="Search for..." />
+        <SearchBar>
+          <i className="ion-ios-search-strong"></i>
+          <input id="searchInput" type="text" />
+        </SearchBar>
       </div>
     );
   }
