@@ -30,6 +30,9 @@ const suggestionExamples = [
   {
     text: 'Panels',
   },
+  {
+    text: 'Modals',
+  },
 ];
 
 export class SearchBar extends React.Component {
@@ -62,8 +65,8 @@ export class SearchBar extends React.Component {
     const inputLength = inputValue.length;
 
     return inputLength === 0 ? [] : suggestionExamples.filter(lang =>
-    lang.text.toLowerCase().slice(0, inputLength) === inputValue
-  );
+      lang.text.toLowerCase().slice(0, inputLength) === inputValue
+    );
   }
 
   getSuggestionValue(suggestion) { // when suggestion selected, this function tells
@@ -73,7 +76,7 @@ export class SearchBar extends React.Component {
   renderSuggestion(suggestion) {
     return (
       <span>{suggestion.text}</span>
-  );
+    );
   }
 
   render() {
