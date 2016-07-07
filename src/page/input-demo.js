@@ -173,7 +173,7 @@ export class InputDemo extends React.Component {
                   <EditableSelect
                     placeholder='With Render Value'
                     label='Editable Select Label'
-                    onRenderValue={(value) => <Button title={`Render Value ${value}`} type='primary' size='md' isIconHidden={true}/>}
+                    onRenderValue={value => `Your value is ${value}`}
                     options={[
                       { value: 1, label: '1' },
                       { value: 2, label: '2' },

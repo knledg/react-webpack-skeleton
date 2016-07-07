@@ -19,7 +19,7 @@ export class Welcome extends React.Component {
             </Panel>
           </Col>
           <Col padding={5}>
-            <Panel className='color-widget' title='Red Paragraph'>
+            <Panel title='Red Paragraph'>
               <div className='red-text'>
                 This is a red paragraph
               </div>
@@ -35,15 +35,17 @@ export class Welcome extends React.Component {
             </Panel>
           </Col>
           <Col padding={5}>
-            <Panel title='Yellow paragraph' className='color-widget'>
+            <Panel title='Yellow paragraph'>
               <div className='yellow-text'>
                 This is a paragraph
               </div>
             </Panel>
           </Col>
           <Col padding={5}>
-            <Panel>
-              This is a paragraph
+            <Panel title='Blue paragraph'>
+              <div className='blue-text'>
+                This is a paragraph
+              </div>
             </Panel>
           </Col>
         </Row>

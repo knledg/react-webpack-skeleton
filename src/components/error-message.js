@@ -7,10 +7,8 @@ export class ErrorMessage extends React.Component {
 
   render() {
     return (
-      <div className='color-widget'>
-        <div className='red-text'>
-          {this.props.error}
-        </div>
+      <div className='red-text'>
+        {this.props.error}
       </div>
     );
   }
