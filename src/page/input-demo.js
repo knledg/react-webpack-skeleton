@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-flex-proto';
-import { Page, Panel, Input, Select, Textarea, Switch, Breadcrumbs, EditableSelect, Button } from 'react-blur-admin';
+import { Page, Panel, Input, Select, Textarea, Switch, Breadcrumbs, EditableSelect } from 'react-blur-admin';
 import { Link } from 'react-router';
 
 export class InputDemo extends React.Component {
