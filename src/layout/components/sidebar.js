@@ -16,12 +16,12 @@ export class Sidebar extends React.Component {
       { pathname: '/', label: 'Home', icon: 'home' },
       { pathname: '/about', label: 'About', icon: 'info' },
       { pathname: '/table-demo', label: 'Tables', icon: 'table' },
-      { pathname: '/button-demo', label: 'Buttons', icon: '' },
-      { pathname: '/progress-bars', label: 'Progress Bars', icon: ''},
-      { pathname: '/modal-demo', label: 'Modals', icon: '' },
-      { pathname: '/tabs-demo', label: 'Tabs', icon: '' },
-      { pathname: '/input-demo', label: 'Inputs', icon: '' },
-      { pathname: '/notifications-demo', label: 'Notifications', icon: '' },
+      { pathname: '/button-demo', label: 'Buttons', icon: 'dot-circle-o' },
+      { pathname: '/progress-bars', label: 'Progress Bars', icon: 'spinner'},
+      { pathname: '/modal-demo', label: 'Modals', icon: 'clipboard' },
+      { pathname: '/tabs-demo', label: 'Tabs', icon: 'list-ul' },
+      { pathname: '/input-demo', label: 'Inputs', icon: 'check-square' },
+      { pathname: '/notifications-demo', label: 'Notifications', icon: 'exclamation' },
     ],
   }
 
