@@ -4,6 +4,8 @@ import {SearchBar} from 'src/layout/components/search-bar';
 
 // Lib
 import eventBus from 'src/lib/event-bus';
+import {NotificationAlert} from 'react-blur-admin';
+import {NotificationsAlert} from 'react-blur-admin';
 
 export class PageTop extends React.Component {
 
@@ -13,6 +15,59 @@ export class PageTop extends React.Component {
       pathname: React.PropTypes.string.isRequired,
       query: React.PropTypes.object.isRequired,
     }),
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = { notifications: [{
+      user: {
+        name: 'Ashley',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      createdAt: '02/13/95 9:00',
+    },
+    {
+      user: {
+        name: 'Nick',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      createdAt: '07/18/16 10:00',
+    },
+    {
+      user: {
+        name: 'Matt',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      createdAt: '07/18/16 11:31',
+    },
+    {
+      user: {
+        name: 'Jon',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      createdAt: '07/18/16 12:00',
+    },
+    {
+      user: {
+        name: 'Jacob',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      createdAt: '07/18/16 10:00',
+    },
+    {
+      user: {
+        name: 'Jason',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      createdAt: '07/01/16 2:00',
+    }],
+  };
   }
 
   state = {
@@ -36,6 +91,15 @@ export class PageTop extends React.Component {
     return (
       <Link to={{ pathname: '/' }} className="al-logo clearfix">{this.state.appName}</Link>
     );
+  }
+
+  renderNotifications() {
+    let notifications = _.assign({}, this.state.notifications);
+    return _.map(notifications, (notification, index) => {
+      return (
+        <NotificationAlert {...notification} key={index}/>
+      );
+    });
   }
 
   renderHamburgerMenu() {
@@ -73,6 +137,9 @@ export class PageTop extends React.Component {
             </li>
           </ul>
         </div>
+        <NotificationsAlert notificationCount={this.state.notifications.length} allNotificationsUrl='url' >
+          {this.renderNotifications()}
+        </NotificationsAlert>
       </div>
     );
   }
