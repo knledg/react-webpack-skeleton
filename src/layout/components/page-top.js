@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import {SearchBar} from 'src/layout/components/search-bar';
 import moment from 'moment';
 import noop from 'lodash';
+import {SearchBar} from 'src/layout/components/search-bar';
 
 // Lib
 import eventBus from 'src/lib/event-bus';
