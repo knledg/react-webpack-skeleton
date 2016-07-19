@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import {SearchBar} from 'src/layout/components/search-bar';
+import moment from 'moment';
+import noop from 'lodash';
 
 // Lib
 import eventBus from 'src/lib/event-bus';
@@ -25,7 +27,8 @@ export class PageTop extends React.Component {
         picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
       },
       subject: 'This is a notification alert',
-      createdAt: '02/13/95 9:00',
+      timeStamp: '02/13/95 9:00',
+      relativeTime: moment('02/13/95').fromNow(),
     },
     {
       user: {
@@ -33,7 +36,8 @@ export class PageTop extends React.Component {
         picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
       },
       subject: 'This is a notification alert',
-      createdAt: '07/18/16 10:00',
+      timeStamp: '07/13/16 12:00',
+      relativeTime: moment('07/13/16 12:00').fromNow(),
     },
     {
       user: {
@@ -41,7 +45,8 @@ export class PageTop extends React.Component {
         picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
       },
       subject: 'This is a notification alert',
-      createdAt: '07/18/16 11:31',
+      timeStamp: '04/20/15 9:00',
+      relativeTime: moment('04/20/15 9:00').fromNow(),
     },
     {
       user: {
@@ -49,7 +54,8 @@ export class PageTop extends React.Component {
         picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
       },
       subject: 'This is a notification alert',
-      createdAt: '07/18/16 12:00',
+      timeStamp: '07/19/16 8:00',
+      relativeTime: moment('07/19/16 8:00').fromNow(),
     },
     {
       user: {
@@ -57,7 +63,8 @@ export class PageTop extends React.Component {
         picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
       },
       subject: 'This is a notification alert',
-      createdAt: '07/18/16 10:00',
+      timeStamp: '05/23/16 2:00',
+      relativeTime: moment('05/23/16 2:00').fromNow(),
     },
     {
       user: {
@@ -65,7 +72,8 @@ export class PageTop extends React.Component {
         picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
       },
       subject: 'This is a notification alert',
-      createdAt: '07/01/16 2:00',
+      timeStamp: '05/01/16 4:00',
+      relativeTime: moment('05/01/16 4:00').fromNow(),
     }],
   };
   }
@@ -137,7 +145,7 @@ export class PageTop extends React.Component {
             </li>
           </ul>
         </div>
-        <NotificationsAlert notificationCount={this.state.notifications.length} allNotificationsUrl='url' >
+        <NotificationsAlert notificationCount={this.state.notifications.length} markAllAsReadOnClick={noop} allNotificationsOnClick={noop} settingsOnClick={noop} >
           {this.renderNotifications()}
         </NotificationsAlert>
       </div>
