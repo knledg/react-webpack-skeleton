@@ -28,6 +28,7 @@
     "lodash": "^4.7.0",
     "moment": "^2.12.0",
     "react": "^0.14.8",
+    "react-autosuggest": "^3.7.4",
     "react-blur-admin": "^0.9.0",
     "react-dom": "^0.14.8",
     "react-flex-proto": "^1.0.0",
