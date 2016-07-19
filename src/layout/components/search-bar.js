@@ -45,6 +45,7 @@ export class SearchBar extends React.Component {
     };
 
     this.onChange = this.onChange.bind(this);
+    this.renderSuggestion = this.renderSuggestion.bind(this);
     this.onSuggestionsUpdateRequested = this.onSuggestionsUpdateRequested.bind(this);
   }
 
@@ -55,18 +56,25 @@ export class SearchBar extends React.Component {
   }
 
   onSuggestionsUpdateRequested({ value }) {
-    this.setState({
-      suggestions: this.getSuggestions(value),
-    });
+    this.setState({loading: true});
+
+    setTimeout(function() {
+      this.setState({
+        suggestions: this.getSuggestions(value),
+        loading: false,
+      });
+    }.bind(this), 200);
   }
 
   getSuggestions(value) {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    return inputLength === 0 ? [] : suggestionExamples.filter(lang =>
+    let suggestions = suggestionExamples.filter(lang =>
       lang.text.toLowerCase().slice(0, inputLength) === inputValue
     );
+
+    return suggestions.length ? suggestions : [{type: 'no-results'}];
   }
 
   getSuggestionValue(suggestion) { // when suggestion selected, this function tells
@@ -74,6 +82,22 @@ export class SearchBar extends React.Component {
   }
 
   renderSuggestion(suggestion) {
+    if (this.state.loading) {
+      return (
+        <div>
+          <i className='fa fa-spinner fa-spin' /> Loading...
+        </div>
+      );
+    }
+
+    if (suggestion.type === 'no-results') {
+      return (
+        <div>
+          <i className='fa fa-exclamation-triangle' /> No results found, you may need to be more specific!
+        </div>
+      );
+    }
+
     return (
       <span>{suggestion.text}</span>
     );
