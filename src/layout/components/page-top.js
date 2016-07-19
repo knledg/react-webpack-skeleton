@@ -4,6 +4,8 @@ import {SearchBar} from 'src/layout/components/search-bar';
 import moment from 'moment';
 import noop from 'lodash';
 import {SearchBar} from 'src/layout/components/search-bar';
+import moment from 'moment';
+import noop from 'lodash';
 
 // Lib
 import eventBus from 'src/lib/event-bus';
