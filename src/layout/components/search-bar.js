@@ -56,7 +56,7 @@ export class SearchBar extends React.Component {
   }
 
   onSuggestionsUpdateRequested({ value }) {
-    this.setState({loading: true});
+    this.setState({loading: true, suggestions: [{type: 'loading'}]});
 
     setTimeout(function() {
       this.setState({
@@ -64,9 +64,6 @@ export class SearchBar extends React.Component {
         loading: false,
       });
     }.bind(this), 200);
-    this.setState({
-      suggestions: this.getSuggestions(value),
-    });
   }
 
   getSuggestions(value) {
