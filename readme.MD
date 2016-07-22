@@ -28,14 +28,17 @@
 - Welcome page (featuring different panels)
 - Modal demo
 - Notification demo
+- Maps
+
+## In progress of completion
+
+- Accordions
+- Mail
 
 ## Todo
 
-- Accordions
 - Profile / Settings demos
 - Timeline
-- Mail
-- Maps
 - Tree View
 
 - Fix routing on gh-pages
