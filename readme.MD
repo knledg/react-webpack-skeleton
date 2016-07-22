@@ -33,7 +33,8 @@
 ## In progress of completion
 
 - Accordions
-- Mail
+- Mail (waiting to be merged)
+- Slider
 
 ## Todo
 
