@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import {SearchBar} from 'src/layout/components/search-bar';
-import moment from 'moment';
-import noop from 'lodash';
-import {SearchBar} from 'src/layout/components/search-bar';
+import { SearchBar } from 'src/layout/components/search-bar';
 import moment from 'moment';
 import noop from 'lodash';
 
