@@ -32,22 +32,21 @@
 
 ## In progress of completion
 
-- Accordions
+- Accordions (in progress)
 - Mail (waiting to be merged)
 - Slider
+- Profile (waiting to be merged)
 
 ## Todo
 
-- Profile / Settings demos
+- Settings demos
 - Timeline
 - Tree View
-
 - Fix routing on gh-pages
 
 ## Themes
 
 - Blur Theme (Copyright (c) 2016 Akvemus GSC)
-
 
 ## Auth0
 
