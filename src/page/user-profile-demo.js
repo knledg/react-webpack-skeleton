@@ -242,12 +242,12 @@ export class UserProfileDemo extends React.Component {
               Daily reports
                 <Switch type='primary' isOn={this.state.switches[4]} onChange={e => this.onSwitchChange(4)}/>
               </Col>
-              </Row>
-              <Row>
+            </Row>
+            <Row>
               <Col>
-              <Button icon='fa fa-check-square-o' type='primary' title='Update Profile'/>
+                <Button icon='fa fa-check-square-o' type='primary' title='Update Profile'/>
               </Col>
-              </Row>
+            </Row>
           </Panel>
         </Col>
       </div>
