@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 import {SearchBar} from 'src/layout/components/search-bar';
+import moment from 'moment';
+import noop from 'lodash';
+
+import {MessagesAlert, MessagesAlertContainer} from 'react-blur-admin';
 
 // Lib
 import eventBus from 'src/lib/event-bus';
@@ -13,6 +17,29 @@ export class PageTop extends React.Component {
       pathname: React.PropTypes.string.isRequired,
       query: React.PropTypes.object.isRequired,
     }),
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = { messages: [{
+      user: {
+        name: 'Ashley',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a message alert',
+      timeStamp: '02/13/95 9:00',
+      relativeTime: moment('02/13/95').fromNow(),
+    },
+    {
+      user: {
+        name: 'Nick',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a message alert',
+      timeStamp: '07/13/16 12:00',
+      relativeTime: moment('07/13/16 12:00').fromNow(),
+    }],
+     };
   }
 
   state = {
@@ -55,6 +82,15 @@ export class PageTop extends React.Component {
     );
   }
 
+  renderMessages() {
+    let message = _.assign({}, this.state.messages);
+    return _.map(message, (messages, index) => {
+      return (
+        <MessagesAlert {...messages} key={index}/>
+      );
+    });
+  }
+
   renderUserSection() {
     return (
       <div className="user-profile clearfix">
@@ -73,6 +109,9 @@ export class PageTop extends React.Component {
             </li>
           </ul>
         </div>
+        <MessagesAlertContainer mailCount={this.state.messages.length} markAllAsReadOnClick={noop} allMessagesOnClick={noop} settingsOnClick={noop} >
+          {this.renderMessages()}
+        </MessagesAlertContainer>
       </div>
     );
   }
