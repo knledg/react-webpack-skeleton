@@ -24,6 +24,12 @@ export class ModalDemo extends React.Component {
     this.setState({ [modalName]: true });
   }
 
+  onSwitchChange(index) {
+    let switches = this.state.switches;
+    switches[index] = !switches[index];
+    this.setState({ switches });
+  }
+
   renderBreadcrumbs() {
     return (
       <Breadcrumbs>
@@ -33,12 +39,6 @@ export class ModalDemo extends React.Component {
           Modals
       </Breadcrumbs>
     );
-  }
-
-  onSwitchChange(index) {
-    let switches = this.state.switches;
-    switches[index] = !switches[index];
-    this.setState({ switches });
   }
 
   renderCustomizedModals() {
