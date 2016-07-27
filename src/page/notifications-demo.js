@@ -5,9 +5,21 @@ import { Link } from 'react-router';
 import {Row, Col} from 'react-flex-proto';
 
 export class NotificationsDemo extends React.Component {
+
+  renderBreadcrumbs() {
+    return (
+      <Breadcrumbs>
+        <Link to='/'>
+          Home
+        </Link>
+          Notifications Demo
+      </Breadcrumbs>
+    );
+  }
+
   render() {
     return (
-      <Page actionBar={<Breadcrumbs><Link to='/'>Home</Link>Notifications Demo</Breadcrumbs>} title='Notifications Demo'>
+      <Page actionBar={this.renderBreadcrumbs()} title='Notifications Demo'>
         <Panel title='Message Notifications'>
           <Row>
             <Col grow={false}>

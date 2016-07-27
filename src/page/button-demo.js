@@ -2,13 +2,24 @@ import React from 'react';
 
 import { Page, Panel, Button, Breadcrumbs } from 'react-blur-admin';
 import { Link } from 'react-router';
-
 import {Row, Col} from 'react-flex-proto';
 
 export class ButtonDemo extends React.Component {
+
+  renderBreadcrumbs() {
+    return (
+      <Breadcrumbs>
+        <Link to='/'>
+          Home
+        </Link>
+          Buttons
+      </Breadcrumbs>
+    );
+  }
+
   render() {
     return (
-      <Page actionBar={<Breadcrumbs><Link to='/'>Home</Link>Buttons</Breadcrumbs>} title='Buttons'>
+      <Page actionBar={this.renderBreadcrumbs()} title='Buttons'>
         <Row>
           <Col>
             <Panel title='Large Buttons'>

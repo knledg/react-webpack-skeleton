@@ -35,9 +35,20 @@ export class InputDemo extends React.Component {
     this.setState({ switches });
   }
 
+  renderBreadcrumbs() {
+    return (
+      <Breadcrumbs>
+        <Link to='/'>
+          Home
+        </Link>
+          Inputs
+      </Breadcrumbs>
+    );
+  }
+
   render() {
     return (
-      <Page actionBar={<Breadcrumbs><Link to='/'>Home</Link>Inputs</Breadcrumbs>} title='Inputs'>
+      <Page actionBar={this.renderBreadcrumbs()} title='Inputs'>
         <Row>
           <Col>
             <Panel title='Text Inputs'>

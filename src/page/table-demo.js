@@ -23,9 +23,20 @@ export class TableDemo extends React.Component {
     this.setState({currentPage: value});
   }
 
+  renderBreadcrumbs() {
+    return (
+      <Breadcrumbs>
+        <Link to='/'>
+          Home
+        </Link>
+          Table Types
+      </Breadcrumbs>
+    );
+  }
+
   render() {
     return (
-      <Page actionBar={<Breadcrumbs><Link to='/'>Home</Link>Table Types</Breadcrumbs>} title='Table Types'>
+      <Page actionBar={this.renderBreadcrumbs()} title='Table Types'>
         <Panel title='Table with Hover Effect'>
           <h5>When mousing over table rows will respond</h5>
           <Table>
