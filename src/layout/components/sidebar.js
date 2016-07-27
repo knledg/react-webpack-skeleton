@@ -34,7 +34,8 @@ export class Sidebar extends React.Component {
       return (
         <li className={`al-sidebar-list-item ${this.isSelected(navItem)}`} key={navItem.pathname}>
           <Link className="al-sidebar-list-link" to={{ pathname: navItem.pathname, query: navItem.query }}>
-            <i className={`fa fa-${navItem.icon}`}></i><span>{navItem.label}</span>
+            <i className={`fa fa-${navItem.icon}`}></i>
+            <span>{navItem.label}</span>
           </Link>
         </li>
       );

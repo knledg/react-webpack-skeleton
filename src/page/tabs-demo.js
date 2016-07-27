@@ -1,12 +1,23 @@
 import React from 'react';
-
 import { Page, Tabs, Tab, Breadcrumbs } from 'react-blur-admin';
 import { Link } from 'react-router';
 
 export class TabsDemo extends React.Component {
+
+  renderBreadcrumbs() {
+    return (
+      <Breadcrumbs>
+        <Link to='/'>
+          Home
+        </Link>
+          Tabs Demo
+      </Breadcrumbs>
+    );
+  }
+
   render() {
     return (
-      <Page actionBar={<Breadcrumbs><Link to='/'>Home</Link>Tabs Demo</Breadcrumbs>} title='Tabs Demo'>
+      <Page actionBar={this.renderBreadcrumbs()} title='Tabs Demo'>
         <Tabs
           align='top'
           startTab={2} >

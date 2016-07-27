@@ -38,9 +38,20 @@ export class ProgressBars extends React.Component {
     }
   }
 
+  renderBreadcrumbs() {
+    return (
+      <Breadcrumbs>
+        <Link to='/'>
+          Home
+        </Link>
+          Progress Bars
+      </Breadcrumbs>
+    );
+  }
+
   render() {
     return (
-      <Page actionBar={<Breadcrumbs><Link to='/'>Home</Link>Progress Bars</Breadcrumbs>} title='Progress Bars ♥'>
+      <Page actionBar={this.renderBreadcrumbs()} title='Progress Bars ♥'>
         <Panel title='Basic'>
           <ProgressBar type='success' percentage={this.state.percentage[0]}/>
           <ProgressBar type='warning' percentage={this.state.percentage[1]}/>
