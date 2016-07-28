@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
-import {SearchBar} from 'src/layout/components/search-bar';
+import { SearchBar } from 'src/layout/components/search-bar';
+import moment from 'moment';
+import { noop } from 'lodash';
 
 // Lib
 import eventBus from 'src/lib/event-bus';
+import {NotificationAlert} from 'react-blur-admin';
+import {NotificationsAlert} from 'react-blur-admin';
 
 export class PageTop extends React.Component {
 
@@ -13,6 +17,65 @@ export class PageTop extends React.Component {
       pathname: React.PropTypes.string.isRequired,
       query: React.PropTypes.object.isRequired,
     }),
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = { notifications: [{
+      user: {
+        name: 'Ashley',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      timeStamp: '02/13/95 9:00',
+      relativeTime: moment('02/13/95').fromNow(),
+    },
+    {
+      user: {
+        name: 'Nick',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      timeStamp: '07/13/16 12:00',
+      relativeTime: moment('07/13/16 12:00').fromNow(),
+    },
+    {
+      user: {
+        name: 'Matt',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      timeStamp: '04/20/15 9:00',
+      relativeTime: moment('04/20/15 9:00').fromNow(),
+    },
+    {
+      user: {
+        name: 'Jon',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      timeStamp: '07/19/16 8:00',
+      relativeTime: moment('07/19/16 8:00').fromNow(),
+    },
+    {
+      user: {
+        name: 'Jacob',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      timeStamp: '05/23/16 2:00',
+      relativeTime: moment('05/23/16 2:00').fromNow(),
+    },
+    {
+      user: {
+        name: 'Jason',
+        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      },
+      subject: 'This is a notification alert',
+      timeStamp: '05/01/16 4:00',
+      relativeTime: moment('05/01/16 4:00').fromNow(),
+    }],
+  };
   }
 
   state = {
@@ -36,6 +99,15 @@ export class PageTop extends React.Component {
     return (
       <Link to={{ pathname: '/' }} className="al-logo clearfix">{this.state.appName}</Link>
     );
+  }
+
+  renderNotifications() {
+    let notifications = _.assign({}, this.state.notifications);
+    return _.map(notifications, (notification, index) => {
+      return (
+        <NotificationAlert {...notification} key={index}/>
+      );
+    });
   }
 
   renderHamburgerMenu() {
@@ -73,6 +145,13 @@ export class PageTop extends React.Component {
             </li>
           </ul>
         </div>
+        <NotificationsAlert
+          notificationCount={this.state.notifications.length}
+          markAllAsReadOnClick={noop}
+          allNotificationsOnClick={noop}
+          settingsOnClick={noop} >
+            {this.renderNotifications()}
+        </NotificationsAlert>
       </div>
     );
   }
