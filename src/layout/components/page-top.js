@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { SearchBar } from 'src/layout/components/search-bar';
 import moment from 'moment';
-import noop from 'lodash';
+import { noop } from 'lodash';
 
 // Lib
 import eventBus from 'src/lib/event-bus';
@@ -145,8 +145,12 @@ export class PageTop extends React.Component {
             </li>
           </ul>
         </div>
-        <NotificationsAlert notificationCount={this.state.notifications.length} markAllAsReadOnClick={noop} allNotificationsOnClick={noop} settingsOnClick={noop} >
-          {this.renderNotifications()}
+        <NotificationsAlert
+          notificationCount={this.state.notifications.length}
+          markAllAsReadOnClick={noop}
+          allNotificationsOnClick={noop}
+          settingsOnClick={noop} >
+            {this.renderNotifications()}
         </NotificationsAlert>
       </div>
     );
