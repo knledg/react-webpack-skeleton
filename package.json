@@ -1,6 +1,6 @@
 {
   "name": "react-webpack-skeleton",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Webpack Skeleton",
   "main": "index.js",
   "scripts": {
