@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Page, Panel, Modal, Button, Breadcrumbs, Input, Select, Switch } from 'react-blur-admin';
 import { Link } from 'react-router';
+import _ from 'lodash';
 
 import {Row, Col} from 'react-flex-proto';
 
@@ -25,7 +26,7 @@ export class ModalDemo extends React.Component {
   }
 
   onSwitchChange(index) {
-    let switches = this.state.switches;
+    let switches = _.assign({}, this.state.switches);
     switches[index] = !switches[index];
     this.setState({ switches });
   }
