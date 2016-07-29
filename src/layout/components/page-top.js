@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import {SearchBar} from 'src/layout/components/search-bar';
 import moment from 'moment';
-import noop from 'lodash';
+import { noop } from 'lodash';
+import Person from 'react-blur-admin/dist/assets/img/person.svg';
 
 import {MessagesAlert, MessagesAlertContainer} from 'react-blur-admin';
 
@@ -24,16 +25,16 @@ export class PageTop extends React.Component {
     this.state = { messages: [{
       user: {
         name: 'Ashley',
-        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+        picture: Person,
       },
       subject: 'This is a message alert',
       timeStamp: '02/13/95 9:00',
-      relativeTime: moment('02/13/95').fromNow(),
+      relativeTime: moment('02/13/16').fromNow(),
     },
     {
       user: {
         name: 'Nick',
-        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+        picture: Person,
       },
       subject: 'This is a message alert',
       timeStamp: '07/13/16 12:00',
@@ -96,7 +97,7 @@ export class PageTop extends React.Component {
       <div className="user-profile clearfix">
         <div className={`al-user-profile dropdown ${this.state.isMenuOpen ? 'open' : ''}`}>
           <a className="profile-toggle-link dropdown-toggle" onClick={this.onToggleMenu.bind(this)}>
-            <img src={this.props.user && this.props.user.picture ? this.props.user.picture : 'http://placehold.it/25x25'} />
+            <img src={Person} />
           </a>
           <ul className="top-dropdown-menu profile-dropdown dropdown-menu">
             <li><i className="dropdown-arr"></i></li>
