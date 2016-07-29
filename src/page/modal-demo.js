@@ -45,8 +45,7 @@ export class ModalDemo extends React.Component {
   renderCustomizedModals() {
     return (
       <div>
-
-      <Modal type='info' title='Add Link' buttonText='Save Changes' isOpen={this.state.customizedModal2} onClose={e => this.onCloseModal('customizedModal2')}>
+        <Modal type='info' title='Add Link' buttonText='Save Changes' isOpen={this.state.customizedModal2} onClose={e => this.onCloseModal('customizedModal2')}>
           <Row>
             <Col>
               Paste a link into the box below
