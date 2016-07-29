@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { SearchBar } from 'src/layout/components/search-bar';
+import {SearchBar} from 'src/layout/components/search-bar';
 import moment from 'moment';
 import { noop } from 'lodash';
+import Person from 'react-blur-admin/dist/assets/img/person.svg';
 
 // Lib
 import eventBus from 'src/lib/event-bus';
-import {NotificationAlert} from 'react-blur-admin';
-import {NotificationsAlert} from 'react-blur-admin';
+import {MessagesAlert, MessagesAlertContainer, NotificationsAlert, NotificationAlert} from 'react-blur-admin';
+import {Row, Col} from 'react-flex-proto';
 
 export class PageTop extends React.Component {
 
@@ -21,61 +22,80 @@ export class PageTop extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { notifications: [{
-      user: {
-        name: 'Ashley',
-        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+    this.state = {
+      notifications: [{
+        user: {
+          name: 'Ashley',
+          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+        },
+        subject: 'This is a notification alert',
+        timeStamp: '02/13/95 9:00',
+        relativeTime: moment('02/13/95').fromNow(),
       },
-      subject: 'This is a notification alert',
-      timeStamp: '02/13/95 9:00',
-      relativeTime: moment('02/13/95').fromNow(),
-    },
-    {
-      user: {
-        name: 'Nick',
-        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      {
+        user: {
+          name: 'Nick',
+          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+        },
+        subject: 'This is a notification alert',
+        timeStamp: '07/13/16 12:00',
+        relativeTime: moment('07/13/16 12:00').fromNow(),
       },
-      subject: 'This is a notification alert',
-      timeStamp: '07/13/16 12:00',
-      relativeTime: moment('07/13/16 12:00').fromNow(),
-    },
-    {
-      user: {
-        name: 'Matt',
-        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      {
+        user: {
+          name: 'Matt',
+          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+        },
+        subject: 'This is a notification alert',
+        timeStamp: '04/20/15 9:00',
+        relativeTime: moment('04/20/15 9:00').fromNow(),
       },
-      subject: 'This is a notification alert',
-      timeStamp: '04/20/15 9:00',
-      relativeTime: moment('04/20/15 9:00').fromNow(),
-    },
-    {
-      user: {
-        name: 'Jon',
-        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      {
+        user: {
+          name: 'Jon',
+          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+        },
+        subject: 'This is a notification alert',
+        timeStamp: '07/19/16 8:00',
+        relativeTime: moment('07/19/16 8:00').fromNow(),
       },
-      subject: 'This is a notification alert',
-      timeStamp: '07/19/16 8:00',
-      relativeTime: moment('07/19/16 8:00').fromNow(),
-    },
-    {
-      user: {
-        name: 'Jacob',
-        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      {
+        user: {
+          name: 'Jacob',
+          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+        },
+        subject: 'This is a notification alert',
+        timeStamp: '05/23/16 2:00',
+        relativeTime: moment('05/23/16 2:00').fromNow(),
       },
-      subject: 'This is a notification alert',
-      timeStamp: '05/23/16 2:00',
-      relativeTime: moment('05/23/16 2:00').fromNow(),
-    },
-    {
-      user: {
-        name: 'Jason',
-        picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+      {
+        user: {
+          name: 'Jason',
+          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+        },
+        subject: 'This is a notification alert',
+        timeStamp: '05/01/16 4:00',
+        relativeTime: moment('05/01/16 4:00').fromNow(),
+      }],
+      messages: [{
+        user: {
+          name: 'Ashley',
+          picture: Person,
+        },
+        subject: 'This is a message alert',
+        timeStamp: '02/13/95 9:00',
+        relativeTime: moment('02/13/16').fromNow(),
       },
-      subject: 'This is a notification alert',
-      timeStamp: '05/01/16 4:00',
-      relativeTime: moment('05/01/16 4:00').fromNow(),
-    }],
-  };
+      {
+        user: {
+          name: 'Nick',
+          picture: Person,
+        },
+        subject: 'This is a message alert',
+        timeStamp: '07/13/16 12:00',
+        relativeTime: moment('07/13/16 12:00').fromNow(),
+      }],
+    };
   }
 
   state = {
@@ -101,15 +121,6 @@ export class PageTop extends React.Component {
     );
   }
 
-  renderNotifications() {
-    let notifications = _.assign({}, this.state.notifications);
-    return _.map(notifications, (notification, index) => {
-      return (
-        <NotificationAlert {...notification} key={index}/>
-      );
-    });
-  }
-
   renderHamburgerMenu() {
     return null;
 
@@ -127,12 +138,30 @@ export class PageTop extends React.Component {
     );
   }
 
+  renderMessages() {
+    let message = _.assign({}, this.state.messages);
+    return _.map(message, (messages, index) => {
+      return (
+        <MessagesAlert {...messages} key={index}/>
+      );
+    });
+  }
+
+  renderNotifications() {
+    let notifications = _.assign({}, this.state.notifications);
+    return _.map(notifications, (notification, index) => {
+      return (
+        <NotificationAlert {...notification} key={index}/>
+      );
+    });
+  }
+
   renderUserSection() {
     return (
       <div className="user-profile clearfix">
         <div className={`al-user-profile dropdown ${this.state.isMenuOpen ? 'open' : ''}`}>
           <a className="profile-toggle-link dropdown-toggle" onClick={this.onToggleMenu.bind(this)}>
-            <img src={this.props.user && this.props.user.picture ? this.props.user.picture : 'http://placehold.it/25x25'} />
+            <img src={this.props.user && this.props.user.picture ? this.props.user.picture : {Person}}/>
           </a>
           <ul className="top-dropdown-menu profile-dropdown dropdown-menu">
             <li><i className="dropdown-arr"></i></li>
@@ -145,13 +174,20 @@ export class PageTop extends React.Component {
             </li>
           </ul>
         </div>
-        <NotificationsAlert
-          notificationCount={this.state.notifications.length}
-          markAllAsReadOnClick={noop}
-          allNotificationsOnClick={noop}
-          settingsOnClick={noop} >
-            {this.renderNotifications()}
-        </NotificationsAlert>
+        <Row>
+          <Col padding='5px 2px'>
+            <MessagesAlertContainer mailCount={this.state.messages.length} markAllAsReadOnClick={noop} allMessagesOnClick={noop} settingsOnClick={noop} >
+              {this.renderMessages()}
+            </MessagesAlertContainer>
+            <NotificationsAlert
+              notificationCount={this.state.notifications.length}
+              markAllAsReadOnClick={noop}
+              allNotificationsOnClick={noop}
+              settingsOnClick={noop} >
+                {this.renderNotifications()}
+            </NotificationsAlert>
+          </Col>
+        </Row>
       </div>
     );
   }
