@@ -26,7 +26,7 @@ export class PageTop extends React.Component {
       notifications: [{
         user: {
           name: 'Ashley',
-          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+          picture: Person,
         },
         subject: 'This is a notification alert',
         timeStamp: '02/13/95 9:00',
@@ -35,7 +35,7 @@ export class PageTop extends React.Component {
       {
         user: {
           name: 'Nick',
-          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+          picture: Person,
         },
         subject: 'This is a notification alert',
         timeStamp: '07/13/16 12:00',
@@ -44,7 +44,7 @@ export class PageTop extends React.Component {
       {
         user: {
           name: 'Matt',
-          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+          picture: Person,
         },
         subject: 'This is a notification alert',
         timeStamp: '04/20/15 9:00',
@@ -53,7 +53,7 @@ export class PageTop extends React.Component {
       {
         user: {
           name: 'Jon',
-          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+          picture: Person,
         },
         subject: 'This is a notification alert',
         timeStamp: '07/19/16 8:00',
@@ -62,7 +62,7 @@ export class PageTop extends React.Component {
       {
         user: {
           name: 'Jacob',
-          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+          picture: Person,
         },
         subject: 'This is a notification alert',
         timeStamp: '05/23/16 2:00',
@@ -71,7 +71,7 @@ export class PageTop extends React.Component {
       {
         user: {
           name: 'Jason',
-          picture: 'http://ww4.msu.ac.zw/mainsite/wp-content/uploads/2015/05/default.gif',
+          picture: Person,
         },
         subject: 'This is a notification alert',
         timeStamp: '05/01/16 4:00',
