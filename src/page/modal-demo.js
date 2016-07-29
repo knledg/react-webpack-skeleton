@@ -45,31 +45,8 @@ export class ModalDemo extends React.Component {
   renderCustomizedModals() {
     return (
       <div>
-        <Modal type='info' buttonText='Save' title='Update Profile' isOpen={this.state.customizedModal1} onClose={e => this.onCloseModal('customizedModal1')}>
-          <Row>
-            <Col align='center'>
-              Update your information below
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <div className='col-md-6'>
-                <Input
-                  onChange={e => this.onTextChange('firstName', e)}
-                  label='First Name'
-                  value={this.state.firstName} />
-              </div>
-              <div className='col-md-6'>
-                <Input
-                  onChange={e => this.onTextChange('lastName', e)}
-                  label='Last Name'
-                  value={this.state.lastName} />
-              </div>
-            </Col>
-          </Row>
-        </Modal>
 
-        <Modal type='info' title='Add Link' buttonText='Save Changes' isOpen={this.state.customizedModal2} onClose={e => this.onCloseModal('customizedModal2')}>
+      <Modal type='info' title='Add Link' buttonText='Save Changes' isOpen={this.state.customizedModal2} onClose={e => this.onCloseModal('customizedModal2')}>
           <Row>
             <Col>
               Paste a link into the box below
@@ -133,16 +110,39 @@ export class ModalDemo extends React.Component {
             </Col>
           </Row>
           <Row>
-            <Col>
-              <Col grow={false}>
-                <Switch type='info' isOn={this.state.switches[0]} onChange={e => this.onSwitchChange(0)}/>
-              </Col>
-              <Col grow={false}>
-                <Switch type='danger' isOn={this.state.switches[1]} onChange={e => this.onSwitchChange(1)}/>
-              </Col>
+            <Col grow={false}>
+              <Switch type='info' isOn={this.state.switches[0]} onChange={e => this.onSwitchChange(0)}/>
+            </Col>
+            <Col grow={false}>
+              <Switch type='danger' isOn={this.state.switches[1]} onChange={e => this.onSwitchChange(1)}/>
             </Col>
           </Row>
         </Modal>
+
+        <Modal type='info' buttonText='Save' title='Update Profile' isOpen={this.state.customizedModal1} onClose={e => this.onCloseModal('customizedModal1')}>
+          <Row>
+            <Col align='center'>
+              Update your information below
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <div className='col-md-6'>
+                <Input
+                  onChange={e => this.onTextChange('firstName', e)}
+                  label='First Name'
+                  value={this.state.firstName} />
+              </div>
+              <div className='col-md-6'>
+                <Input
+                  onChange={e => this.onTextChange('lastName', e)}
+                  label='Last Name'
+                  value={this.state.lastName} />
+              </div>
+            </Col>
+          </Row>
+        </Modal>
+
       </div>
     );
   }
@@ -200,19 +200,19 @@ export class ModalDemo extends React.Component {
             <Panel title='Customized Modals'>
               <Row>
                 <Col grow={false}>
-                  <Button type='info' title='Update Profile' icon='fa fa-wrench' onClick={e => this.onRenderModal('customizedModal1')} />
-                </Col>
-                <Col grow={false}>
                   <Button type='primary' title='Add a Link' icon='fa fa-group' onClick={e => this.onRenderModal('customizedModal2')} />
                 </Col>
                 <Col grow={false}>
                   <Button type='success' title='Selectable Options' isIconHidden={true} onClick={e => this.onRenderModal('customizedModal3')} />
                 </Col>
                 <Col grow={false}>
+                  <Button type='warning' title='With Switches' icon='fa fa-magic' onClick={e => this.onRenderModal('customizedModal5')} />
+                </Col>
+                <Col grow={false}>
                   <Button type='danger' title='With Checkboxes' isIconHidden={true} onClick={e => this.onRenderModal('customizedModal4')} />
                 </Col>
                 <Col grow={false}>
-                  <Button type='warning' title='With Switches' icon='fa fa-magic' onClick={e => this.onRenderModal('customizedModal5')} />
+                  <Button type='info' title='Update Profile' icon='fa fa-wrench' onClick={e => this.onRenderModal('customizedModal1')} />
                 </Col>
               </Row>
             </Panel>
