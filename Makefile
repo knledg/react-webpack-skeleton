@@ -27,7 +27,7 @@ test:
 ghPages:
 	rm -rf ../react-webpack-skeleton-ghpages/*
 	make clean
-	NODE_ENV=production BASE_URL="http://knledg.github.io/react-webpack-skeleton/" $(WEBPACK) \
+	NODE_ENV=production APP_NAME="React Webpack Skeleton" BASE_URL="http://knledg.github.io/react-webpack-skeleton/" $(WEBPACK) \
 		--config webpack.config.prod.js \
 		--verbose \
 		--display-chunks \

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
-import {SearchBar} from 'src/layout/components/search-bar';
 import moment from 'moment';
 import { noop } from 'lodash';
 import Person from 'react-blur-admin/dist/assets/img/person.svg';
+
+import {SearchBar} from 'src/layout/components/search-bar';
 
 // Lib
 import eventBus from 'src/lib/event-bus';
@@ -161,7 +162,7 @@ export class PageTop extends React.Component {
       <div className="user-profile clearfix">
         <div className={`al-user-profile dropdown ${this.state.isMenuOpen ? 'open' : ''}`}>
           <a className="profile-toggle-link dropdown-toggle" onClick={this.onToggleMenu.bind(this)}>
-            <img src={this.props.user && this.props.user.picture ? this.props.user.picture : {Person}}/>
+            <img src={this.props.user && this.props.user.picture ? this.props.user.picture : Person}/>
           </a>
           <ul className="top-dropdown-menu profile-dropdown dropdown-menu">
             <li><i className="dropdown-arr"></i></li>
