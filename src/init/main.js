@@ -6,6 +6,7 @@ import { AppRouter } from 'src/init/router';
 
 import 'react-flex-proto/styles/flex.css';
 import 'react-blur-admin/dist/assets/styles/react-blur-admin.min.css';
+import 'src/assets/styles/app.scss';
 
 // Initializing touch events
 import injectTapEventPlugin from 'react-tap-event-plugin';

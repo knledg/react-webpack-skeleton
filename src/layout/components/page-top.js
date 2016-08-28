@@ -166,7 +166,7 @@ export class PageTop extends React.Component {
           </a>
           <ul className="top-dropdown-menu profile-dropdown dropdown-menu">
             <li><i className="dropdown-arr"></i></li>
-            <li><Link to="/"><i className="fa fa-user"></i>Profile</Link></li>
+            <li><Link to="/user-profile-demo"><i className="fa fa-user"></i>Profile</Link></li>
             <li><Link to="/'"><i className="fa fa-cog"></i>Settings</Link></li>
             <li>
               <a href={this.props.location.pathname} className="signout" onClick={e => this.onLogout()}>
