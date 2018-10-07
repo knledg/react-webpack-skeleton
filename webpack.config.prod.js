@@ -1,6 +1,6 @@
 /* eslint-disable strict */
 'use strict';
-
+require("babel-polyfill");
 const APP_NAME = process.env.APP_NAME;
 
 const path = require('path');
@@ -12,6 +12,7 @@ const pkg = require('./package.json');
 module.exports = {
   devtool: 'source-map',
   entry: [
+    'babel-polyfill' ,
     './src/init/main',
   ],
   output: {
