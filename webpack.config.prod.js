@@ -12,6 +12,7 @@ const pkg = require('./package.json');
 module.exports = {
   devtool: 'source-map',
   entry: [
+    'babel-polyfill' ,
     './src/init/main',
   ],
   output: {
